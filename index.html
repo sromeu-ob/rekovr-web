@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rekovr — Find what's lost. Return what's found.</title>
-  <meta name="description" content="AI-powered matching connects lost items with their owners, securely and privately." />
-  <meta property="og:title" content="Rekovr — Find what's lost. Return what's found." />
-  <meta property="og:description" content="AI-powered matching connects lost items with their owners, securely and privately." />
+  <title>Rekovr — Recover what matters. The lost & found platform.</title>
+  <meta name="description" content="The global lost & found platform. Rekovr connects people and organizations with AI-powered matching to reunite lost items with their owners." />
+  <meta property="og:title" content="Rekovr — Recover what matters." />
+  <meta property="og:description" content="The global lost & found platform. AI connects lost items with their owners — whether found by a person, a taxi, an airport, or any organization." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rekovr.ai" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -47,6 +47,14 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    .network-line {
+      stroke-dasharray: 6 4;
+      animation: dash 20s linear infinite;
+    }
+    @keyframes dash {
+      to { stroke-dashoffset: -200; }
+    }
   </style>
 </head>
 <body class="bg-white antialiased">
@@ -57,30 +65,32 @@
       <a href="#" class="text-2xl font-extrabold tracking-tight text-foreground font-heading">Rekovr</a>
       <div class="flex items-center gap-6">
         <a href="#how" class="hidden sm:block text-sm text-muted hover:text-foreground transition">How it works</a>
-        <a href="#features" class="hidden sm:block text-sm text-muted hover:text-foreground transition">Features</a>
+        <a href="#network" class="hidden sm:block text-sm text-muted hover:text-foreground transition">The network</a>
+        <a href="#business" class="hidden sm:block text-sm text-muted hover:text-foreground transition">For business</a>
         <a href="https://app.rekovr.ai" class="inline-flex items-center justify-center h-9 px-5 text-sm font-semibold text-white bg-zinc-900 rounded-full hover:bg-zinc-800 transition">Open App</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative min-h-[90vh] flex items-center justify-center pt-16">
+  <section class="relative min-h-[92vh] flex items-center justify-center pt-16">
     <div class="max-w-5xl mx-auto px-6 py-24 md:py-32 text-center">
       <div class="fade-in">
-        <p class="inline-block mb-6 px-4 py-1.5 text-xs font-semibold tracking-wide uppercase text-zinc-600 bg-zinc-100 rounded-full">AI-powered lost &amp; found</p>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.1] tracking-tight text-foreground">
-          Find what's lost.<br/>Return what's found.
+        <p class="inline-block mb-6 px-4 py-1.5 text-xs font-semibold tracking-wide uppercase text-zinc-600 bg-zinc-100 rounded-full">The lost &amp; found platform</p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight text-foreground">
+          Recover what matters.
         </h1>
         <p class="mt-6 text-lg sm:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
-          Rekovr uses AI to match lost items with found ones — automatically, securely, and privately. Stop scrolling through endless posts. Let technology do the work.
+          The global network that connects people and organizations to reunite lost items with their owners — powered by AI, built on trust.
         </p>
         <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="https://app.rekovr.ai" class="inline-flex items-center justify-center h-12 px-8 text-base font-semibold text-white bg-zinc-900 rounded-full hover:bg-zinc-800 transition shadow-lg shadow-zinc-900/20">
             Get started
             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
           </a>
-          <a href="#how" class="inline-flex items-center justify-center h-12 px-8 text-base font-medium text-foreground bg-surface rounded-full hover:bg-zinc-200 transition">
-            Learn more
+          <a href="https://business.rekovr.ai" class="inline-flex items-center justify-center h-12 px-8 text-base font-medium text-foreground bg-surface rounded-full hover:bg-zinc-200 transition">
+            For organizations
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
           </a>
         </div>
       </div>
@@ -88,28 +98,157 @@
     <div class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent"></div>
   </section>
 
+  <!-- The network: visual ecosystem -->
+  <section id="network" class="py-24 md:py-32 bg-surface">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-sm font-semibold text-zinc-500 uppercase tracking-wide">The network</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">One platform. Every lost item.</h2>
+        <p class="mt-4 text-muted max-w-2xl mx-auto leading-relaxed">
+          Lost your phone in a taxi? Left a bag at the airport? Dropped your wallet at a concert? Rekovr connects all the dots — individuals, transport companies, airports, venues, and more — into one intelligent network.
+        </p>
+      </div>
+
+      <!-- Network visual -->
+      <div class="fade-in relative max-w-3xl mx-auto">
+        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 600 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line class="network-line" x1="300" y1="60" x2="100" y2="180" stroke="#d4d4d8" stroke-width="1.5"/>
+          <line class="network-line" x1="300" y1="60" x2="300" y2="180" stroke="#d4d4d8" stroke-width="1.5"/>
+          <line class="network-line" x1="300" y1="60" x2="500" y2="180" stroke="#d4d4d8" stroke-width="1.5"/>
+          <line class="network-line" x1="100" y1="180" x2="300" y2="290" stroke="#d4d4d8" stroke-width="1.5"/>
+          <line class="network-line" x1="300" y1="180" x2="300" y2="290" stroke="#d4d4d8" stroke-width="1.5"/>
+          <line class="network-line" x1="500" y1="180" x2="300" y2="290" stroke="#d4d4d8" stroke-width="1.5"/>
+        </svg>
+        <div class="relative grid grid-cols-3 gap-y-16 py-4">
+          <!-- Top: Lost owner -->
+          <div class="col-span-3 flex justify-center">
+            <div class="text-center">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-zinc-900 rounded-2xl mb-3 shadow-lg">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
+              </div>
+              <p class="text-sm font-bold text-foreground">You</p>
+              <p class="text-xs text-muted">Report your lost item</p>
+            </div>
+          </div>
+          <!-- Middle: Organizations -->
+          <div class="flex justify-center">
+            <div class="text-center">
+              <div class="inline-flex items-center justify-center w-14 h-14 bg-white border-2 border-zinc-200 rounded-2xl mb-3">
+                <svg class="w-6 h-6 text-zinc-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H6.375c-.621 0-1.125-.504-1.125-1.125V14.25m17.25 0V8.625c0-.621-.504-1.125-1.125-1.125h-2.764a1.125 1.125 0 01-.894-.447l-1.378-1.838A1.125 1.125 0 0015.896 5H14.25m0 0h-.375a1.125 1.125 0 00-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125h.375m0-3.75v3.75"/></svg>
+              </div>
+              <p class="text-sm font-bold text-foreground">Transport</p>
+              <p class="text-xs text-muted">Taxis, buses, trains</p>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <div class="text-center">
+              <div class="inline-flex items-center justify-center w-14 h-14 bg-white border-2 border-zinc-200 rounded-2xl mb-3">
+                <svg class="w-6 h-6 text-zinc-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21"/></svg>
+              </div>
+              <p class="text-sm font-bold text-foreground">Airports &amp; Venues</p>
+              <p class="text-xs text-muted">Terminals, arenas, hotels</p>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <div class="text-center">
+              <div class="inline-flex items-center justify-center w-14 h-14 bg-white border-2 border-zinc-200 rounded-2xl mb-3">
+                <svg class="w-6 h-6 text-zinc-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+              </div>
+              <p class="text-sm font-bold text-foreground">Communities</p>
+              <p class="text-xs text-muted">Events, festivals, campuses</p>
+            </div>
+          </div>
+          <!-- Bottom: Rekovr AI -->
+          <div class="col-span-3 flex justify-center">
+            <div class="text-center">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-zinc-900 rounded-2xl mb-3 shadow-lg">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/></svg>
+              </div>
+              <p class="text-sm font-bold text-foreground">Rekovr AI</p>
+              <p class="text-xs text-muted">Matches everything, automatically</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- How it works -->
   <section id="how" class="py-24 md:py-32">
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-16 fade-in">
         <p class="text-sm font-semibold text-zinc-500 uppercase tracking-wide">How it works</p>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">Three simple steps</h2>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">Simple for everyone</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-8 md:gap-12">
         <div class="fade-in text-center md:text-left">
           <div class="inline-flex items-center justify-center w-12 h-12 mb-5 text-zinc-900 bg-zinc-100 rounded-2xl font-heading font-bold text-lg">1</div>
-          <h3 class="text-lg font-bold text-foreground">Report your item</h3>
-          <p class="mt-2 text-muted leading-relaxed">Lost something? Found something? Describe it, upload photos, and pin the location on the map.</p>
+          <h3 class="text-lg font-bold text-foreground">Report it</h3>
+          <p class="mt-2 text-muted leading-relaxed">Lost or found something? Describe it, snap a photo, pin the location. Takes less than a minute.</p>
         </div>
         <div class="fade-in text-center md:text-left">
           <div class="inline-flex items-center justify-center w-12 h-12 mb-5 text-zinc-900 bg-zinc-100 rounded-2xl font-heading font-bold text-lg">2</div>
-          <h3 class="text-lg font-bold text-foreground">AI finds matches</h3>
-          <p class="mt-2 text-muted leading-relaxed">Our AI analyzes descriptions, photos, locations and timing to find the best possible matches automatically.</p>
+          <h3 class="text-lg font-bold text-foreground">AI does the work</h3>
+          <p class="mt-2 text-muted leading-relaxed">Our AI scans the entire network — people, transport companies, venues — analyzing descriptions, photos, locations, and timing to find matches.</p>
         </div>
         <div class="fade-in text-center md:text-left">
           <div class="inline-flex items-center justify-center w-12 h-12 mb-5 text-zinc-900 bg-zinc-100 rounded-2xl font-heading font-bold text-lg">3</div>
-          <h3 class="text-lg font-bold text-foreground">Connect &amp; recover</h3>
-          <p class="mt-2 text-muted leading-relaxed">Once matched, chat securely to verify ownership and arrange the return. Simple, safe, rewarding.</p>
+          <h3 class="text-lg font-bold text-foreground">Recover &amp; reward</h3>
+          <p class="mt-2 text-muted leading-relaxed">Get notified when there's a match. Chat securely, verify ownership, and arrange the return. Finders get rewarded.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- For Organizations -->
+  <section id="business" class="py-24 md:py-32 bg-foreground text-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div class="fade-in">
+          <p class="text-sm font-semibold text-zinc-400 uppercase tracking-wide">For organizations</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">Your lost &amp; found,<br/>reimagined.</h2>
+          <p class="mt-5 text-zinc-400 leading-relaxed">
+            Whether you're managing a taxi fleet, an airport terminal, a concert venue, or a university campus — Rekovr replaces your outdated lost & found box with an intelligent platform that automatically connects items with their owners.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a href="https://business.rekovr.ai" class="inline-flex items-center justify-center h-12 px-8 text-base font-semibold text-foreground bg-white rounded-full hover:bg-zinc-100 transition">
+              Start free
+              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </a>
+            <a href="mailto:business@rekovr.ai" class="inline-flex items-center justify-center h-12 px-8 text-base font-medium text-zinc-300 bg-zinc-800 rounded-full hover:bg-zinc-700 transition">
+              Contact sales
+            </a>
+          </div>
+        </div>
+        <div class="fade-in grid grid-cols-2 gap-4">
+          <div class="bg-zinc-800/50 border border-zinc-700/50 rounded-2xl p-6">
+            <div class="w-10 h-10 flex items-center justify-center bg-zinc-700 rounded-xl mb-4">
+              <svg class="w-5 h-5 text-zinc-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+            </div>
+            <h4 class="font-bold text-white text-sm">Dashboard</h4>
+            <p class="mt-1.5 text-xs text-zinc-400 leading-relaxed">Full visibility of items, matches, and team activity.</p>
+          </div>
+          <div class="bg-zinc-800/50 border border-zinc-700/50 rounded-2xl p-6">
+            <div class="w-10 h-10 flex items-center justify-center bg-zinc-700 rounded-xl mb-4">
+              <svg class="w-5 h-5 text-zinc-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+            </div>
+            <h4 class="font-bold text-white text-sm">AI matching</h4>
+            <p class="mt-1.5 text-xs text-zinc-400 leading-relaxed">Items are automatically matched with owners across the network.</p>
+          </div>
+          <div class="bg-zinc-800/50 border border-zinc-700/50 rounded-2xl p-6">
+            <div class="w-10 h-10 flex items-center justify-center bg-zinc-700 rounded-xl mb-4">
+              <svg class="w-5 h-5 text-zinc-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+            </div>
+            <h4 class="font-bold text-white text-sm">Team management</h4>
+            <p class="mt-1.5 text-xs text-zinc-400 leading-relaxed">Invite your team. Assign roles. Collaborate efficiently.</p>
+          </div>
+          <div class="bg-zinc-800/50 border border-zinc-700/50 rounded-2xl p-6">
+            <div class="w-10 h-10 flex items-center justify-center bg-zinc-700 rounded-xl mb-4">
+              <svg class="w-5 h-5 text-zinc-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+            </div>
+            <h4 class="font-bold text-white text-sm">Analytics</h4>
+            <p class="mt-1.5 text-xs text-zinc-400 leading-relaxed">Track recovery rates, response times, and volume trends.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -128,34 +267,34 @@
             <svg class="w-5 h-5 text-zinc-900" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/></svg>
           </div>
           <h3 class="text-lg font-bold text-foreground">AI-powered matching</h3>
-          <p class="mt-2 text-muted leading-relaxed">Visual and semantic analysis compares descriptions, photos, and context to find your item with high precision.</p>
+          <p class="mt-2 text-muted leading-relaxed">Visual and semantic analysis compares descriptions, photos, and context to find your item across the entire network with high precision.</p>
         </div>
         <div class="fade-in bg-white rounded-2xl border border-zinc-100 p-8">
           <div class="w-10 h-10 flex items-center justify-center bg-zinc-100 rounded-xl mb-4">
-            <svg class="w-5 h-5 text-zinc-900" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+            <svg class="w-5 h-5 text-zinc-900" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438a2.25 2.25 0 01-1.228 2.353 9 9 0 01-1.395-1.152M3.888 15.903A9 9 0 0112.75 3.03"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-foreground">Location awareness</h3>
-          <p class="mt-2 text-muted leading-relaxed">Pin where you lost or found an item on the map. Proximity is a key signal for matching accuracy.</p>
+          <h3 class="text-lg font-bold text-foreground">Global network</h3>
+          <p class="mt-2 text-muted leading-relaxed">Your lost item is searched across individuals, transport companies, airports, and venues — not just nearby posts. One report reaches everywhere.</p>
         </div>
         <div class="fade-in bg-white rounded-2xl border border-zinc-100 p-8">
           <div class="w-10 h-10 flex items-center justify-center bg-zinc-100 rounded-xl mb-4">
             <svg class="w-5 h-5 text-zinc-900" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
           </div>
           <h3 class="text-lg font-bold text-foreground">Secure &amp; private</h3>
-          <p class="mt-2 text-muted leading-relaxed">Chat only unlocks after verified matching and payment. Your personal information stays protected.</p>
+          <p class="mt-2 text-muted leading-relaxed">Chat only unlocks after a verified match. Your personal information stays protected. Ownership verification built in.</p>
         </div>
         <div class="fade-in bg-white rounded-2xl border border-zinc-100 p-8">
           <div class="w-10 h-10 flex items-center justify-center bg-zinc-100 rounded-xl mb-4">
             <svg class="w-5 h-5 text-zinc-900" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
           </div>
           <h3 class="text-lg font-bold text-foreground">Built-in rewards</h3>
-          <p class="mt-2 text-muted leading-relaxed">Set a reward for your lost item. Finders get compensated for doing the right thing. Everyone wins.</p>
+          <p class="mt-2 text-muted leading-relaxed">Set a reward for your lost item. Finders — whether individuals or organizations — get compensated for doing the right thing.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Social proof / stats -->
+  <!-- Stats -->
   <section class="py-24 md:py-32">
     <div class="max-w-5xl mx-auto px-6">
       <div class="fade-in grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -180,16 +319,19 @@
   </section>
 
   <!-- CTA -->
-  <section id="cta" class="py-24 md:py-32 bg-foreground">
+  <section id="cta" class="py-24 md:py-32 bg-surface">
     <div class="max-w-3xl mx-auto px-6 text-center fade-in">
-      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Ready to recover what's yours?</h2>
-      <p class="mt-4 text-lg text-zinc-400 leading-relaxed">Whether you've lost something or found something that isn't yours — start here.</p>
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">Ready to recover what matters?</h2>
+      <p class="mt-4 text-lg text-muted leading-relaxed">Whether you're an individual who lost something, someone who found an item, or an organization looking to modernize your lost & found.</p>
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="https://app.rekovr.ai/publish?type=lost" class="inline-flex items-center justify-center h-12 px-8 text-base font-semibold text-foreground bg-white rounded-full hover:bg-zinc-100 transition">
+        <a href="https://app.rekovr.ai" class="inline-flex items-center justify-center h-12 px-8 text-base font-semibold text-white bg-zinc-900 rounded-full hover:bg-zinc-800 transition shadow-lg shadow-zinc-900/20">
           I lost something
         </a>
-        <a href="https://app.rekovr.ai/publish?type=found" class="inline-flex items-center justify-center h-12 px-8 text-base font-semibold text-white bg-zinc-700 rounded-full hover:bg-zinc-600 transition">
+        <a href="https://app.rekovr.ai" class="inline-flex items-center justify-center h-12 px-8 text-base font-semibold text-foreground bg-white border border-zinc-200 rounded-full hover:bg-zinc-50 transition">
           I found something
+        </a>
+        <a href="https://business.rekovr.ai" class="inline-flex items-center justify-center h-12 px-8 text-base font-medium text-zinc-600 bg-white border border-zinc-200 rounded-full hover:bg-zinc-50 transition">
+          For organizations
         </a>
       </div>
     </div>
