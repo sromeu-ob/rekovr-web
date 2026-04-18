@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rekovr — Logo Explorations</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0A0D0D;
+    --card:      #111616;
+    --border:    rgba(255,255,255,0.07);
+    --muted:     #4B5563;
+    --text:      #E5E7EB;
+    --teal:      #0D9488;
+    --teal-l:    #14B8A6;
+    --cyan:      #06B6D4;
+    --cyan-l:    #22D3EE;
+    --label-bg:  rgba(13,148,136,0.12);
+    --label-clr: #5EEAD4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Manrope', sans-serif;
+    min-height: 100vh;
+    padding: 3rem 2rem 6rem;
+  }
+
+  header {
+    max-width: 960px;
+    margin: 0 auto 3.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2rem;
+  }
+
+  header h1 {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+  }
+
+  header p {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 520px;
+  }
+
+  .grid {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: rgba(13,148,136,0.3); }
+  .card.featured {
+    border-color: rgba(13,148,136,0.25);
+    background: linear-gradient(135deg, #0E1A1A 0%, #111616 100%);
+  }
+
+  .logo-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.75rem;
+  }
+
+  /* ── size contexts ── */
+  .size-hero   { font-size: 3rem;    font-weight: 800; line-height: 1; }
+  .size-nav    { font-size: 1.125rem; font-weight: 700; line-height: 1; }
+  .size-small  { font-size: 0.875rem; font-weight: 600; line-height: 1; }
+
+  .ctx-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .ctx-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    min-width: 2.5rem;
+  }
+
+  /* ── base wordmark ── */
+  .wm { font-family: 'Manrope', sans-serif; color: #F9FAFB; letter-spacing: -0.02em; }
+
+  /* === OPTION SPECIFIC STYLES === */
+
+  /* A — original */
+  .opt-a .wm { font-weight: 800; }
+
+  /* B — all lowercase */
+  .opt-b .wm { font-weight: 800; }
+
+  /* C — lowercase + dot in teal */
+  .opt-c .wm { font-weight: 800; }
+  .opt-c .dot { color: var(--teal); }
+
+  /* D — K bicolor: vertical bar white, right arms teal */
+  .opt-d .wm { font-weight: 800; }
+  .k-bicolor {
+    position: relative;
+    display: inline-block;
+  }
+  .k-bicolor .k-left {
+    display: inline-block;
+    color: #F9FAFB;
+    clip-path: inset(0 61% 0 0);
+  }
+  .k-bicolor .k-right {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    color: var(--teal);
+    clip-path: inset(0 0 0 42%);
+  }
+
+  /* E — lowercase + K bicolor + dot — FEATURED */
+  .opt-e .wm { font-weight: 800; }
+  .opt-e .dot { color: var(--teal-l); }
+
+  /* F — k totalment teal */
+  .opt-f .wm { font-weight: 800; }
+  .opt-f .k-teal { color: var(--teal); }
+
+  /* ── card footer ── */
+  .card-meta {
+    border-top: 1px solid var(--border);
+    padding-top: 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .card-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .card-desc {
+    font-size: 0.8rem;
+    color: #6B7280;
+    line-height: 1.5;
+    max-width: 280px;
+    text-align: right;
+  }
+
+  .badge-rec {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: var(--label-bg);
+    color: var(--label-clr);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .badge-rec::before { content: '★'; font-size: 0.6rem; }
+
+  @media (max-width: 640px) {
+    .grid { grid-template-columns: 1fr; }
+    .size-hero { font-size: 2.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Rekovr — Logo Explorations</h1>
+  <p>10 variants per comparar. Cada card mostra 3 contextos d'ús: hero, navbar i peu de pàgina. Desplaça't i mira quin respira millor.</p>
+</header>
+
+<div class="grid">
+
+  <!-- A: Original baseline -->
+  <div class="card opt-a">
+    <div class="logo-stage">
+      <div class="ctx-row">
+        <span class="ctx-label">Hero</span>
+        <span class="wm size-hero">Rekovr.</span>
+      </div>
+      <div class="ctx-row">
+        <span class="ctx-label">Nav</span>
+        <span class="wm size-nav">Rekovr.</span>
+      </div>
+      <div class="ctx-row">
+        <span class="ctx-label">Micro</span>
+        <span class="wm size-small">Rekovr.</span>
+      </div>
+    </div>
+    <div class="card-meta">
+      <div>
+        <div class="card-label">A — Original</div>
+      </div>
+      <div class="card-desc">Baseline actual. Massa similar a Revolut en lectura ràpida.</div>
+    </div>
+  </div>
+
+  <!-- B: All lowercase -->
+  <div class="card opt-b">
+    <div class="logo-stage">
+      <div class="ctx-row">
+        <span class="ctx-label">Hero</span>
+        <span class="wm size-hero">rekovr.</span>
+      </div>
+      <div class="ctx-row">
+        <span class="ctx-label">Nav</span>
+        <span class="wm size-nav">rekovr.</span>
+      </div>
+      <div class="ctx-row">
+        <span class="ctx-label">Micro</span>
+        <span class="wm size-small">rekovr.</span>
+      </div>
+    </div>
+    <div class="card-meta">
+      <div>
+        <div class="card-label">B — Minúscules</div>
+      </div>
+      <div class="card-desc">Més proper i menys corporate. Trenca la semblança amb Revolut.</div>
+    </div>
+  </div>
+
+  <!-- C: lowercase + teal dot -->
+  <div class="card opt-c">
+    <div class="logo-stage">
+      <div class="ctx-row">
+        <span class="ctx-label">Hero</span>
+        <span class="wm size-hero">rekovr<span class="dot">.</span></span>
+      </div>
+      <div class="ctx-row">
+        <span class="ctx-label">Nav</span>
+        <span class="wm size-nav">rekovr<span class="dot">.</span></span>
+      </div>
+      <div class="ctx-row">
+        <span class="ctx-label">Micro</span>
+        <span class="wm size-small">rekovr<span class="dot">.</span></span>
+      </div>
+    </div>
+    <div class="card-meta">
+      <div>
+        <div class="card-label">C — Punt accent</div>
+      </div>
+      <div class="card-desc">El punt en color és el detall mínim que actua de firma. Fàcil d'implementar arreu.</div>
+    </div>
+  </div>
+
+  <!-- D: K bicolor -->
+  <div class="card opt-d">
+    <div class="logo-stage">
+      <div class="ctx-row">
+        <span class="ctx-label">Hero</span>
+        <span class="wm size-hero">Re<span class="k-bicolor"><span class="k-left">k</span><span class="k-right">k</span></span>ovr.</span>
+      </div>
+      <div class="ctx-row">
+        <span class="ctx-label">Nav</span>
+        <span class="wm size-nav">Re<span class="k-bicolor"><span class="k-left">k</span><span class="k-right">k</span></span>ovr.</span>
+      </div>
+      <div class="ctx-row">
+        <span class="ctx-label">Micro</span>
+        <span class="wm size-small">Re<span class="k-bicolor"><span class="k-left">k</span><span class="k-right">k</span></span>ovr.</span>
+      </div>
+    </div>
+    <div class="card-meta">
+      <div>
+        <div class="card-label">D — K bicolor</div>
+      </div>
+      <div class="card-desc">Barra vertical blanca, braços drets en teal. La separació visual crea el bumerang.</div>
+    </div>
+  </div>
+
+  <!-- E: lowercase + K bicolor + dot — FEATURED -->
+  <div class="card opt-e featured">
+    <div class="logo-stage">
+      <div class="ctx-row">
+        <span class="ctx-label">Hero</span>
+        <span class="wm size-hero">re<span class="k-bicolor"><span class="k-left">k</span><span class="k-right">k</span></span>ovr<span class="dot">.</span></span>
+      </div>
+      <div class="ctx-row">
+        <span class="ctx-label">Nav</span>
+        <span class="wm size-nav">re<span class="k-bicolor"><span class="k-left">k</span><span class="k-right">k</span></span>ovr<span class="dot">.</span></span>
+      </div>
+      <div class="ctx-row">
+        <span class="ctx-label">Micro</span>
+        <span class="wm size-small">re<span class="k-bicolor"><span class="k-left">k</span><span class="k-right">k</span></span>ovr<span class="dot">.</span></span>
+      </div>
+    </div>
+    <div class="card-meta">
+      <div>
+        <div class="card-label">E — Combo recomanat</div>
+        <div style="margin-top:0.4rem;"><span class="badge-rec">Recomanació</span></div>
+      </div>
+      <div class="card-desc">Minúscules + K bicolor + punt accent. Els tres elements junts donen caràcter sense soroll.</div>
+    </div>
+  </div>
+
+  <!-- F: K totalment teal -->
+  <div class="card opt-f">
+    <div class="logo-stage">
+      <div class="ctx-row">
+        <span class="ctx-label">Hero</span>
+        <span class="wm size-hero">re<span class="k-teal">k</span>ovr.</span>
+      </div>
+      <div class="ctx-row">
+        <span class="ctx-label">Nav</span>
+        <span class="wm size-nav">re<span class="k-teal">k</span>ovr.</span>
+      </div>
+      <div class="ctx-row">
+        <span class="ctx-label">Micro</span>
+        <span class="wm size-small">re<span class="k-teal">k</span>ovr.</span>
+      </div>
+    </div>
+    <div class="card-meta">
+      <div>
+        <div class="card-label">F — K teal sencer</div>
+      </div>
+      <div class="card-desc">Tota la K en teal. Més senzill que el bicolor, funciona bé a qualsevol mida.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Spacer + note -->
+<div style="max-width:960px; margin:3rem auto 0; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.06);">
+  <p style="font-size:0.75rem; color:#374151; text-align:center; letter-spacing:0.05em;">
+    Rekovr — Logo Playground · Servit localment · Les opcions es poden combinar entre elles
+  </p>
+</div>
+
+</body>
+</html>
