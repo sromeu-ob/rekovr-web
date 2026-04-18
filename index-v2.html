@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rekovr — Recover what matters.</title>
+  <meta name="description" content="The global lost & found platform. AI-powered matching connects people and organizations to reunite lost items with their owners." />
+  <meta property="og:title" content="Rekovr — Recover what matters." />
+  <meta property="og:description" content="AI connects lost items with their owners — whether found by a person, a taxi, an airport, or any organization." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rekovr.ai" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230C0C0E'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-weight='900' font-size='36' fill='%23FF6B35'>R</text></svg>" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0C0C0E',
+            'ink-2': '#141416',
+            'ink-3': '#1C1C20',
+            rule: '#252528',
+            dim: '#3A3A40',
+            ghost: '#6B6B72',
+            silver: '#A8A8B0',
+            snow: '#F0F0F2',
+            accent: '#FF6B35',
+            'accent-dim': 'rgba(255,107,53,0.12)',
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            body: ['DM Sans', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    :root {
+      --accent: #FF6B35;
+      --ink: #0C0C0E;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ink);
+      color: #E8E8EC;
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ─── Grain overlay ─────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* ─── Hero scanline effect ──────────────────── */
+    @keyframes scanline {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100vh); }
+    }
+    .hero-scanline {
+      position: absolute;
+      left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255,107,53,0.15), transparent);
+      animation: scanline 8s linear infinite;
+      pointer-events: none;
+    }
+
+    /* ─── Page load animations ──────────────────── */
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .rise { animation: rise 0.9s cubic-bezier(.16,1,.3,1) both; }
+    .rise-1 { animation-delay: 0.05s; }
+    .rise-2 { animation-delay: 0.15s; }
+    .rise-3 { animation-delay: 0.28s; }
+    .rise-4 { animation-delay: 0.42s; }
+    .rise-5 { animation-delay: 0.58s; }
+
+    /* ─── Scroll reveal ─────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1);
+    }
+    .reveal.in { opacity: 1; transform: none; }
+    .reveal-delay { transition-delay: 0.12s; }
+    .reveal-delay-2 { transition-delay: 0.22s; }
+    .reveal-delay-3 { transition-delay: 0.32s; }
+
+    /* ─── Typography ────────────────────────────── */
+    .display { font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: -0.04em; line-height: 0.92; }
+    .display-sm { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.03em; }
+    .label { font-family: 'DM Sans', sans-serif; font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6B72; }
+
+    /* ─── Accent glow ───────────────────────────── */
+    .glow { color: var(--accent); text-shadow: 0 0 80px rgba(255,107,53,0.35); }
+
+    /* ─── Rule ──────────────────────────────────── */
+    hr.rule { border: none; border-top: 1px solid #252528; }
+
+    /* ─── Hover link ────────────────────────────── */
+    .link-hover {
+      position: relative;
+      display: inline-block;
+    }
+    .link-hover::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 100%;
+      height: 1px;
+      background: currentColor;
+      transition: right 0.3s cubic-bezier(.16,1,.3,1);
+    }
+    .link-hover:hover::after { right: 0; }
+
+    /* ─── Pricing row ───────────────────────────── */
+    .plan-row {
+      border-bottom: 1px solid #252528;
+      transition: background 0.2s ease;
+    }
+    .plan-row:hover { background: #141416; }
+    .plan-row.featured { background: #141416; border-bottom-color: #3A3A40; }
+    .plan-row.featured:hover { background: #1C1C20; }
+
+    /* ─── Manifesto cursor blink ────────────────── */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .cursor { display: inline-block; width: 3px; height: 1em; background: var(--accent); vertical-align: bottom; animation: blink 1.1s step-end infinite; margin-left: 4px; }
+
+    /* ─── Org section line decoration ──────────── */
+    .org-line { border-left: 1px solid #252528; padding-left: 1.5rem; }
+    .org-line:hover { border-left-color: var(--accent); }
+    .org-line { transition: border-color 0.3s ease; }
+
+    /* ─── Number accent ─────────────────────────── */
+    .num-accent { font-family: 'Syne', sans-serif; font-size: clamp(4rem, 12vw, 9rem); font-weight: 800; line-height: 1; color: #1C1C20; letter-spacing: -0.04em; user-select: none; }
+
+    /* ─── Orange pill ───────────────────────────── */
+    .pill-accent { background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.2); color: var(--accent); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 999px; }
+
+    /* ─── Horizontal rule with label ───────────── */
+    .section-rule {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 4rem;
+    }
+    .section-rule::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #252528;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════ NAV -->
+  <nav class="fixed top-0 inset-x-0 z-50 mix-blend-normal">
+    <div style="background: rgba(12,12,14,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(37,37,40,0.8);">
+      <div class="max-w-7xl mx-auto px-6 md:px-10 h-14 flex items-center justify-between">
+        <a href="#" class="font-display text-lg font-bold tracking-tight text-snow" style="font-family:'Syne',sans-serif;">
+          Rekovr<span style="color:var(--accent);">.</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#how" class="label hover:text-silver transition-colors">How</a>
+          <a href="#org" class="label hover:text-silver transition-colors">Organizations</a>
+          <a href="#pricing" class="label hover:text-silver transition-colors">Pricing</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://business.rekovr.ai" class="hidden sm:block text-sm text-ghost hover:text-silver transition-colors font-body" style="font-family:'DM Sans',sans-serif;">For business</a>
+          <a href="https://app.rekovr.ai" class="inline-flex items-center gap-2 h-8 px-4 rounded-full text-xs font-semibold" style="background:var(--accent); color:#fff; font-family:'DM Sans',sans-serif;">
+            Open app
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════ HERO -->
+  <section class="relative min-h-screen flex flex-col justify-end overflow-hidden pt-14">
+    <div class="hero-scanline"></div>
+
+    <!-- Background accent -->
+    <div class="absolute top-0 right-0 w-[40vw] h-[60vh] pointer-events-none" style="background: radial-gradient(ellipse at top right, rgba(255,107,53,0.06) 0%, transparent 65%);"></div>
+
+    <div class="max-w-7xl mx-auto px-6 md:px-10 pb-16 md:pb-24 w-full">
+
+      <!-- Eyebrow -->
+      <div class="rise rise-1 mb-8 md:mb-12">
+        <span class="label">Lost &amp; found — reimagined</span>
+      </div>
+
+      <!-- Headline block -->
+      <div class="rise rise-2">
+        <h1 class="display text-snow" style="font-size: clamp(3.5rem, 11vw, 10rem);">
+          Recover
+        </h1>
+      </div>
+      <div class="rise rise-3 flex items-baseline flex-wrap gap-x-6">
+        <h1 class="display text-snow" style="font-size: clamp(3.5rem, 11vw, 10rem);">
+          what
+        </h1>
+        <!-- Inline editorial note — visible on wide screens -->
+        <p class="hidden lg:block text-ghost font-body max-w-xs leading-relaxed text-sm mb-4" style="font-family:'DM Sans',sans-serif;">
+          AI matches lost items across individuals, transport companies, airports, and venues — in seconds.
+        </p>
+      </div>
+      <div class="rise rise-4">
+        <h1 class="display glow" style="font-size: clamp(3.5rem, 11vw, 10rem);">
+          matters<span style="color:var(--accent);">.</span>
+        </h1>
+      </div>
+
+      <!-- Mobile description -->
+      <div class="rise rise-5 lg:hidden mt-8">
+        <p class="text-ghost font-body max-w-sm leading-relaxed" style="font-family:'DM Sans',sans-serif;">
+          AI matches lost items across individuals, transport companies, airports, and venues — in seconds.
+        </p>
+      </div>
+
+      <!-- CTAs + stats row -->
+      <div class="rise rise-5 mt-12 md:mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-12">
+        <div class="flex items-center gap-4">
+          <a href="https://app.rekovr.ai" class="inline-flex items-center gap-2.5 h-11 px-6 rounded-full text-sm font-semibold transition-opacity hover:opacity-80" style="background:var(--accent); color:#fff; font-family:'DM Sans',sans-serif;">
+            I lost something
+          </a>
+          <a href="https://app.rekovr.ai" class="inline-flex items-center gap-2 text-sm font-medium text-silver hover:text-snow transition-colors" style="font-family:'DM Sans',sans-serif;">
+            I found something
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="flex items-center gap-8">
+          <div>
+            <p class="display-sm text-snow" style="font-size:1.75rem;">24/7</p>
+            <p class="label mt-0.5">AI scanning</p>
+          </div>
+          <div class="w-px h-8" style="background:#252528;"></div>
+          <div>
+            <p class="display-sm text-snow" style="font-size:1.75rem;">&lt;60s</p>
+            <p class="label mt-0.5">To first match</p>
+          </div>
+          <div class="w-px h-8 hidden sm:block" style="background:#252528;"></div>
+          <div class="hidden sm:block">
+            <p class="display-sm text-snow" style="font-size:1.75rem;">0€</p>
+            <p class="label mt-0.5">For end users</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom rule -->
+    <div style="height:1px; background:linear-gradient(90deg, transparent, #252528 20%, #252528 80%, transparent);"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ MANIFESTO -->
+  <section style="background:#0F0F11; padding: 6rem 0;">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+      <div class="reveal max-w-4xl">
+        <p class="display-sm text-snow leading-snug" style="font-size: clamp(1.4rem, 3.2vw, 2.25rem); font-family:'Syne',sans-serif; font-weight:600; letter-spacing:-0.025em;">
+          Every day, millions of objects go missing. Most are never found — not because they don't exist somewhere, but because there was no system to connect them. We built that system.
+          <span class="cursor"></span>
+        </p>
+      </div>
+      <div class="reveal reveal-delay mt-10 flex flex-wrap gap-3">
+        <span class="pill-accent">AI matching</span>
+        <span class="pill-accent">Ownership verification</span>
+        <span class="pill-accent">Global network</span>
+        <span class="pill-accent">Zero friction for users</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ HOW IT WORKS -->
+  <section id="how" style="padding: 8rem 0; border-top: 1px solid #252528;">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+
+      <div class="reveal section-rule">
+        <span class="label">How it works</span>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-0">
+        <!-- Step 1 -->
+        <div class="reveal reveal py-10 md:py-0 md:pr-12" style="border-right: 1px solid #252528;">
+          <div class="num-accent">01</div>
+          <div class="mt-6">
+            <h3 class="display-sm text-snow mb-3" style="font-size:1.25rem;">Report it</h3>
+            <p class="text-ghost leading-relaxed text-sm" style="font-family:'DM Sans',sans-serif;">
+              Lost or found something? Describe it, snap a photo, pin the location. Takes less than a minute — then Rekovr takes over.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="reveal reveal-delay py-10 md:py-0 md:px-12" style="border-right: 1px solid #252528;">
+          <div class="num-accent">02</div>
+          <div class="mt-6">
+            <h3 class="display-sm text-snow mb-3" style="font-size:1.25rem;">AI does the work</h3>
+            <p class="text-ghost leading-relaxed text-sm" style="font-family:'DM Sans',sans-serif;">
+              Our AI scans the entire network — individuals, transport fleets, airports, venues — cross-referencing descriptions, photos, locations, and timing to surface matches.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="reveal reveal-delay-2 py-10 md:py-0 md:pl-12">
+          <div class="num-accent">03</div>
+          <div class="mt-6">
+            <h3 class="display-sm text-snow mb-3" style="font-size:1.25rem;">Recover &amp; reward</h3>
+            <p class="text-ghost leading-relaxed text-sm" style="font-family:'DM Sans',sans-serif;">
+              Get notified when there's a match. Chat securely, verify ownership, arrange the return. Finders get rewarded for doing the right thing.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- The network — editorial list -->
+      <div class="reveal mt-20 pt-16" style="border-top: 1px solid #252528;">
+        <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+          <div>
+            <p class="label mb-6">The network</p>
+            <h2 class="display text-snow" style="font-size: clamp(2rem, 5vw, 3.5rem);">One report.<br/>Everywhere.</h2>
+            <p class="text-ghost mt-6 leading-relaxed text-sm max-w-sm" style="font-family:'DM Sans',sans-serif;">
+              Lost your phone in a taxi? Left a bag at the airport? Your report doesn't stay in one place — it reaches the entire network instantly.
+            </p>
+          </div>
+          <div class="space-y-0">
+            <div class="org-line py-5 cursor-default">
+              <div class="flex items-baseline justify-between">
+                <span class="text-snow font-medium" style="font-family:'DM Sans',sans-serif;">Individuals &amp; communities</span>
+                <span class="label ml-4 flex-shrink-0">C2C</span>
+              </div>
+              <p class="text-ghost text-sm mt-1" style="font-family:'DM Sans',sans-serif;">People who find something and report it</p>
+            </div>
+            <div class="org-line py-5 cursor-default">
+              <div class="flex items-baseline justify-between">
+                <span class="text-snow font-medium" style="font-family:'DM Sans',sans-serif;">Taxi &amp; transport fleets</span>
+                <span class="label ml-4 flex-shrink-0">B2B</span>
+              </div>
+              <p class="text-ghost text-sm mt-1" style="font-family:'DM Sans',sans-serif;">Taxis, buses, trains, rideshare</p>
+            </div>
+            <div class="org-line py-5 cursor-default">
+              <div class="flex items-baseline justify-between">
+                <span class="text-snow font-medium" style="font-family:'DM Sans',sans-serif;">Airports &amp; terminals</span>
+                <span class="label ml-4 flex-shrink-0">B2B</span>
+              </div>
+              <p class="text-ghost text-sm mt-1" style="font-family:'DM Sans',sans-serif;">Departure halls, lounges, gates</p>
+            </div>
+            <div class="org-line py-5 cursor-default">
+              <div class="flex items-baseline justify-between">
+                <span class="text-snow font-medium" style="font-family:'DM Sans',sans-serif;">Events &amp; festivals</span>
+                <span class="label ml-4 flex-shrink-0">B2B</span>
+              </div>
+              <p class="text-ghost text-sm mt-1" style="font-family:'DM Sans',sans-serif;">Concerts, fairs, sports venues, conferences</p>
+            </div>
+            <div class="org-line py-5 cursor-default">
+              <div class="flex items-baseline justify-between">
+                <span class="text-snow font-medium" style="font-family:'DM Sans',sans-serif;">Hotels &amp; hospitality</span>
+                <span class="label ml-4 flex-shrink-0">B2B</span>
+              </div>
+              <p class="text-ghost text-sm mt-1" style="font-family:'DM Sans',sans-serif;">Hotels, resorts, restaurants, coworking</p>
+            </div>
+            <div class="org-line py-5 cursor-default">
+              <div class="flex items-baseline justify-between">
+                <span class="text-snow font-medium" style="font-family:'DM Sans',sans-serif;">Cities &amp; institutions</span>
+                <span class="label ml-4 flex-shrink-0">B2B</span>
+              </div>
+              <p class="text-ghost text-sm mt-1" style="font-family:'DM Sans',sans-serif;">Councils, universities, libraries, campuses</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FOR ORGANIZATIONS -->
+  <section id="org" style="padding: 8rem 0; background: #0A0A0C; border-top: 1px solid #252528; border-bottom: 1px solid #252528;">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+
+      <div class="reveal section-rule">
+        <span class="label">For organizations</span>
+      </div>
+
+      <!-- Hero statement -->
+      <div class="reveal max-w-5xl">
+        <h2 class="display text-snow" style="font-size: clamp(2.2rem, 6vw, 4.5rem);">
+          Your lost &amp; found.<br/>
+          <span style="color:var(--accent);">Finally intelligent.</span>
+        </h2>
+      </div>
+
+      <div class="reveal mt-10 max-w-2xl">
+        <p class="text-silver leading-relaxed" style="font-family:'DM Sans',sans-serif; font-size:1.0625rem;">
+          Whether you manage an airport terminal, a city council, a concert venue, or a university campus — Rekovr replaces your outdated lost &amp; found box with an intelligent platform. Your team registers items. AI handles everything else.
+        </p>
+        <p class="text-silver leading-relaxed mt-4" style="font-family:'DM Sans',sans-serif; font-size:1.0625rem;">
+          <strong class="text-snow">Your end users never pay.</strong> You subscribe. They recover — for free.
+        </p>
+      </div>
+
+      <!-- Feature list — editorial columns -->
+      <div class="reveal mt-20 grid md:grid-cols-2 gap-x-20 gap-y-0">
+        <div>
+          <div style="border-top: 1px solid #252528; padding: 1.75rem 0;">
+            <div class="flex items-start justify-between gap-4">
+              <h4 class="display-sm text-snow" style="font-size:1rem;">AI matching, 24/7</h4>
+              <span class="label flex-shrink-0 mt-1">Core</span>
+            </div>
+            <p class="text-ghost text-sm mt-2 leading-relaxed" style="font-family:'DM Sans',sans-serif;">Items registered by your team are automatically matched against all reported losses in the network. No manual search required.</p>
+          </div>
+          <div style="border-top: 1px solid #252528; padding: 1.75rem 0;">
+            <div class="flex items-start justify-between gap-4">
+              <h4 class="display-sm text-snow" style="font-size:1rem;">AI ownership verification</h4>
+              <span class="label flex-shrink-0 mt-1">Core</span>
+            </div>
+            <p class="text-ghost text-sm mt-2 leading-relaxed" style="font-family:'DM Sans',sans-serif;">AI generates smart questions to verify the claimant is the real owner. No staff intervention needed — unless you want it.</p>
+          </div>
+          <div style="border-top: 1px solid #252528; padding: 1.75rem 0;">
+            <div class="flex items-start justify-between gap-4">
+              <h4 class="display-sm text-snow" style="font-size:1rem;">QR secure pickup</h4>
+              <span class="label flex-shrink-0 mt-1">Core</span>
+            </div>
+            <p class="text-ghost text-sm mt-2 leading-relaxed" style="font-family:'DM Sans',sans-serif;">The owner gets a cryptographic single-use QR code. Your staff scans it. Item transferred. Done. No paperwork, no disputes.</p>
+          </div>
+        </div>
+        <div>
+          <div style="border-top: 1px solid #252528; padding: 1.75rem 0;">
+            <div class="flex items-start justify-between gap-4">
+              <h4 class="display-sm text-snow" style="font-size:1rem;">Full operator dashboard</h4>
+              <span class="label flex-shrink-0 mt-1">Platform</span>
+            </div>
+            <p class="text-ghost text-sm mt-2 leading-relaxed" style="font-family:'DM Sans',sans-serif;">Manage items, matches, events, and team activity from one place. Role-based access for departments and locations.</p>
+          </div>
+          <div style="border-top: 1px solid #252528; padding: 1.75rem 0;">
+            <div class="flex items-start justify-between gap-4">
+              <h4 class="display-sm text-snow" style="font-size:1rem;">Event management</h4>
+              <span class="label flex-shrink-0 mt-1">Platform</span>
+            </div>
+            <p class="text-ghost text-sm mt-2 leading-relaxed" style="font-family:'DM Sans',sans-serif;">Organize items by events — festivals, conferences, seasons. Group, filter, and report by period.</p>
+          </div>
+          <div style="border-top: 1px solid #252528; padding: 1.75rem 0;">
+            <div class="flex items-start justify-between gap-4">
+              <h4 class="display-sm text-snow" style="font-size:1rem;">Analytics &amp; reporting</h4>
+              <span class="label flex-shrink-0 mt-1">Platform</span>
+            </div>
+            <p class="text-ghost text-sm mt-2 leading-relaxed" style="font-family:'DM Sans',sans-serif;">Recovery rates, response times, volume trends. Understand your lost &amp; found operation for the first time.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="reveal mt-16 flex flex-col sm:flex-row gap-4">
+        <a href="https://business.rekovr.ai" class="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full text-sm font-semibold text-ink transition-opacity hover:opacity-85" style="background:var(--accent); font-family:'DM Sans',sans-serif;">
+          Start free — no card required
+        </a>
+        <a href="mailto:hello@rekovr.ai" class="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full text-sm font-medium text-silver hover:text-snow transition-colors" style="border: 1px solid #3A3A40; font-family:'DM Sans',sans-serif;">
+          Talk to our team
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ PRICING -->
+  <section id="pricing" style="padding: 8rem 0;">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+
+      <div class="reveal section-rule">
+        <span class="label">Pricing</span>
+      </div>
+
+      <div class="reveal grid md:grid-cols-2 gap-12 md:gap-20 items-start mb-16">
+        <div>
+          <h2 class="display text-snow" style="font-size: clamp(2rem, 5vw, 3.5rem);">Flat-rate.<br/>No surprises.</h2>
+        </div>
+        <div>
+          <p class="text-ghost leading-relaxed" style="font-family:'DM Sans',sans-serif;">
+            One subscription covers everything. Your users always recover for free — regardless of plan. No per-transaction fees. No overages that catch you off guard.
+          </p>
+          <div class="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full" style="background: rgba(255,107,53,0.08); border: 1px solid rgba(255,107,53,0.15);">
+            <div class="w-1.5 h-1.5 rounded-full" style="background:var(--accent);"></div>
+            <span class="text-sm font-medium" style="color:var(--accent); font-family:'DM Sans',sans-serif;">End users always recover for free</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plan table -->
+      <div class="reveal">
+        <!-- Header -->
+        <div class="grid grid-cols-12 gap-4 pb-3" style="border-bottom: 1px solid #3A3A40;">
+          <div class="col-span-4"><span class="label">Plan</span></div>
+          <div class="col-span-2 text-right hidden sm:block"><span class="label">Price</span></div>
+          <div class="col-span-3 text-right hidden md:block"><span class="label">Items / year</span></div>
+          <div class="col-span-3 hidden lg:block"></div>
+        </div>
+
+        <!-- Free -->
+        <div class="plan-row grid grid-cols-12 gap-4 py-5 items-center">
+          <div class="col-span-7 sm:col-span-4">
+            <p class="text-snow font-medium" style="font-family:'DM Sans',sans-serif;">Free</p>
+            <p class="text-ghost text-sm mt-0.5" style="font-family:'DM Sans',sans-serif;">Try it, no commitment</p>
+          </div>
+          <div class="col-span-3 sm:col-span-2 text-right">
+            <p class="display-sm text-snow" style="font-size:1.25rem;">€0</p>
+            <p class="label mt-0.5">forever</p>
+          </div>
+          <div class="col-span-2 col-start-8 sm:col-start-auto md:col-span-3 text-right hidden md:block">
+            <p class="text-ghost text-sm" style="font-family:'DM Sans',sans-serif;">20 items</p>
+          </div>
+          <div class="col-span-2 lg:col-span-3 flex justify-end">
+            <a href="https://business.rekovr.ai" class="text-ghost hover:text-silver text-xs link-hover transition-colors" style="font-family:'DM Sans',sans-serif;">Start free →</a>
+          </div>
+        </div>
+
+        <!-- Starter -->
+        <div class="plan-row grid grid-cols-12 gap-4 py-5 items-center">
+          <div class="col-span-7 sm:col-span-4">
+            <p class="text-snow font-medium" style="font-family:'DM Sans',sans-serif;">Starter</p>
+            <p class="text-ghost text-sm mt-0.5" style="font-family:'DM Sans',sans-serif;">Small venues &amp; shops</p>
+          </div>
+          <div class="col-span-3 sm:col-span-2 text-right">
+            <p class="display-sm text-snow" style="font-size:1.25rem;">€49</p>
+            <p class="label mt-0.5">/ month</p>
+          </div>
+          <div class="col-span-2 col-start-8 sm:col-start-auto md:col-span-3 text-right hidden md:block">
+            <p class="text-ghost text-sm" style="font-family:'DM Sans',sans-serif;">100 items</p>
+          </div>
+          <div class="col-span-2 lg:col-span-3 flex justify-end">
+            <a href="https://business.rekovr.ai" class="text-ghost hover:text-silver text-xs link-hover transition-colors" style="font-family:'DM Sans',sans-serif;">Get started →</a>
+          </div>
+        </div>
+
+        <!-- Growth -->
+        <div class="plan-row grid grid-cols-12 gap-4 py-5 items-center">
+          <div class="col-span-7 sm:col-span-4">
+            <p class="text-snow font-medium" style="font-family:'DM Sans',sans-serif;">Growth</p>
+            <p class="text-ghost text-sm mt-0.5" style="font-family:'DM Sans',sans-serif;">Mid-size organizations</p>
+          </div>
+          <div class="col-span-3 sm:col-span-2 text-right">
+            <p class="display-sm text-snow" style="font-size:1.25rem;">€149</p>
+            <p class="label mt-0.5">/ month</p>
+          </div>
+          <div class="col-span-2 col-start-8 sm:col-start-auto md:col-span-3 text-right hidden md:block">
+            <p class="text-ghost text-sm" style="font-family:'DM Sans',sans-serif;">500 items</p>
+          </div>
+          <div class="col-span-2 lg:col-span-3 flex justify-end">
+            <a href="https://business.rekovr.ai" class="text-ghost hover:text-silver text-xs link-hover transition-colors" style="font-family:'DM Sans',sans-serif;">Get started →</a>
+          </div>
+        </div>
+
+        <!-- Business — featured -->
+        <div class="plan-row featured grid grid-cols-12 gap-4 py-5 items-center" style="border-radius: 4px; margin: 0 -1rem; padding-left: 1rem; padding-right: 1rem;">
+          <div class="col-span-7 sm:col-span-4">
+            <div class="flex items-center gap-3">
+              <p class="font-medium" style="color:var(--accent); font-family:'DM Sans',sans-serif;">Business</p>
+              <span class="pill-accent" style="font-size:0.6rem;">Most popular</span>
+            </div>
+            <p class="text-ghost text-sm mt-0.5" style="font-family:'DM Sans',sans-serif;">Large orgs &amp; municipalities</p>
+          </div>
+          <div class="col-span-3 sm:col-span-2 text-right">
+            <p class="display-sm" style="font-size:1.25rem; color:var(--accent);">€299</p>
+            <p class="label mt-0.5">/ month</p>
+          </div>
+          <div class="col-span-2 col-start-8 sm:col-start-auto md:col-span-3 text-right hidden md:block">
+            <p class="text-ghost text-sm" style="font-family:'DM Sans',sans-serif;">2,000 items</p>
+          </div>
+          <div class="col-span-2 lg:col-span-3 flex justify-end">
+            <a href="mailto:hello@rekovr.ai" class="text-sm font-medium link-hover transition-colors" style="color:var(--accent); font-family:'DM Sans',sans-serif;">Contact sales →</a>
+          </div>
+        </div>
+
+        <!-- Scale -->
+        <div class="plan-row grid grid-cols-12 gap-4 py-5 items-center">
+          <div class="col-span-7 sm:col-span-4">
+            <p class="text-snow font-medium" style="font-family:'DM Sans',sans-serif;">Scale</p>
+            <p class="text-ghost text-sm mt-0.5" style="font-family:'DM Sans',sans-serif;">High-volume operations</p>
+          </div>
+          <div class="col-span-3 sm:col-span-2 text-right">
+            <p class="display-sm text-snow" style="font-size:1.25rem;">€499</p>
+            <p class="label mt-0.5">/ month</p>
+          </div>
+          <div class="col-span-2 col-start-8 sm:col-start-auto md:col-span-3 text-right hidden md:block">
+            <p class="text-ghost text-sm" style="font-family:'DM Sans',sans-serif;">10,000 items</p>
+          </div>
+          <div class="col-span-2 lg:col-span-3 flex justify-end">
+            <a href="mailto:hello@rekovr.ai" class="text-ghost hover:text-silver text-xs link-hover transition-colors" style="font-family:'DM Sans',sans-serif;">Contact sales →</a>
+          </div>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="plan-row grid grid-cols-12 gap-4 py-5 items-center">
+          <div class="col-span-7 sm:col-span-4">
+            <p class="text-snow font-medium" style="font-family:'DM Sans',sans-serif;">Enterprise</p>
+            <p class="text-ghost text-sm mt-0.5" style="font-family:'DM Sans',sans-serif;">Airports, cities, large chains</p>
+          </div>
+          <div class="col-span-3 sm:col-span-2 text-right">
+            <p class="display-sm text-snow" style="font-size:1.25rem;">Custom</p>
+            <p class="label mt-0.5">tailored</p>
+          </div>
+          <div class="col-span-2 col-start-8 sm:col-start-auto md:col-span-3 text-right hidden md:block">
+            <p class="text-ghost text-sm" style="font-family:'DM Sans',sans-serif;">Unlimited</p>
+          </div>
+          <div class="col-span-2 lg:col-span-3 flex justify-end">
+            <a href="mailto:hello@rekovr.ai" class="text-ghost hover:text-silver text-xs link-hover transition-colors" style="font-family:'DM Sans',sans-serif;">Talk to us →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Included in all plans -->
+      <div class="reveal mt-12 pt-10" style="border-top: 1px solid #252528;">
+        <p class="label mb-6">Included in every plan</p>
+        <div class="flex flex-wrap gap-x-8 gap-y-3">
+          <span class="text-ghost text-sm flex items-center gap-2" style="font-family:'DM Sans',sans-serif;"><span style="color:var(--accent);">—</span> AI matching &amp; verification</span>
+          <span class="text-ghost text-sm flex items-center gap-2" style="font-family:'DM Sans',sans-serif;"><span style="color:var(--accent);">—</span> Unlimited operators</span>
+          <span class="text-ghost text-sm flex items-center gap-2" style="font-family:'DM Sans',sans-serif;"><span style="color:var(--accent);">—</span> Secure QR pickup</span>
+          <span class="text-ghost text-sm flex items-center gap-2" style="font-family:'DM Sans',sans-serif;"><span style="color:var(--accent);">—</span> Full dashboard</span>
+          <span class="text-ghost text-sm flex items-center gap-2" style="font-family:'DM Sans',sans-serif;"><span style="color:var(--accent);">—</span> GDPR compliant</span>
+          <span class="text-ghost text-sm flex items-center gap-2" style="font-family:'DM Sans',sans-serif;"><span style="color:var(--accent);">—</span> Free for end users</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ CTA -->
+  <section style="padding: 8rem 0; background: #0A0A0C; border-top: 1px solid #252528;">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+      <div class="reveal grid md:grid-cols-2 gap-12 md:gap-20 items-end">
+        <div>
+          <h2 class="display text-snow" style="font-size: clamp(2.5rem, 7vw, 5rem);">
+            Something's<br/>missing<span style="color:var(--accent);">?</span>
+          </h2>
+        </div>
+        <div>
+          <p class="text-ghost leading-relaxed mb-10" style="font-family:'DM Sans',sans-serif; font-size:1.0625rem;">
+            Join the network. Whether you're looking for something, found something, or managing a lost &amp; found operation at scale — Rekovr is ready.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://app.rekovr.ai" class="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full text-sm font-semibold text-ink transition-opacity hover:opacity-80" style="background:var(--accent); font-family:'DM Sans',sans-serif;">
+              I lost something
+            </a>
+            <a href="https://app.rekovr.ai" class="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full text-sm font-medium text-silver hover:text-snow transition-colors" style="border: 1px solid #3A3A40; font-family:'DM Sans',sans-serif;">
+              I found something
+            </a>
+            <a href="https://business.rekovr.ai" class="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full text-sm font-medium text-silver hover:text-snow transition-colors" style="border: 1px solid #3A3A40; font-family:'DM Sans',sans-serif;">
+              For organizations
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FOOTER -->
+  <footer style="padding: 3rem 0; border-top: 1px solid #252528;">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-10">
+        <div>
+          <a href="#" class="font-display text-base font-bold text-snow" style="font-family:'Syne',sans-serif;">
+            Rekovr<span style="color:var(--accent);">.</span>
+          </a>
+          <p class="text-ghost text-sm mt-1" style="font-family:'DM Sans',sans-serif;">Recover what matters.</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-6">
+          <div>
+            <p class="label mb-3">Platform</p>
+            <div class="space-y-2">
+              <a href="https://app.rekovr.ai" class="block text-ghost text-sm hover:text-silver transition-colors" style="font-family:'DM Sans',sans-serif;">Lost something</a>
+              <a href="https://app.rekovr.ai" class="block text-ghost text-sm hover:text-silver transition-colors" style="font-family:'DM Sans',sans-serif;">Found something</a>
+              <a href="https://business.rekovr.ai" class="block text-ghost text-sm hover:text-silver transition-colors" style="font-family:'DM Sans',sans-serif;">For organizations</a>
+            </div>
+          </div>
+          <div>
+            <p class="label mb-3">Business</p>
+            <div class="space-y-2">
+              <a href="#pricing" class="block text-ghost text-sm hover:text-silver transition-colors" style="font-family:'DM Sans',sans-serif;">Pricing</a>
+              <a href="https://business.rekovr.ai" class="block text-ghost text-sm hover:text-silver transition-colors" style="font-family:'DM Sans',sans-serif;">Dashboard</a>
+              <a href="mailto:hello@rekovr.ai" class="block text-ghost text-sm hover:text-silver transition-colors" style="font-family:'DM Sans',sans-serif;">Contact sales</a>
+            </div>
+          </div>
+          <div>
+            <p class="label mb-3">Company</p>
+            <div class="space-y-2">
+              <a href="#" class="block text-ghost text-sm hover:text-silver transition-colors" style="font-family:'DM Sans',sans-serif;">About</a>
+              <a href="mailto:hello@rekovr.ai" class="block text-ghost text-sm hover:text-silver transition-colors" style="font-family:'DM Sans',sans-serif;">hello@rekovr.ai</a>
+            </div>
+          </div>
+          <div>
+            <p class="label mb-3">Legal</p>
+            <div class="space-y-2">
+              <a href="#" class="block text-ghost text-sm hover:text-silver transition-colors" style="font-family:'DM Sans',sans-serif;">Privacy</a>
+              <a href="#" class="block text-ghost text-sm hover:text-silver transition-colors" style="font-family:'DM Sans',sans-serif;">Terms</a>
+              <a href="#" class="block text-ghost text-sm hover:text-silver transition-colors" style="font-family:'DM Sans',sans-serif;">GDPR</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid #1C1C20; padding-top: 1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+        <p class="label" style="color:#3A3A40;">© 2026 Rekovr. All rights reserved.</p>
+        <div class="flex items-center gap-2">
+          <span style="width:6px; height:6px; border-radius:50%; background:#22c55e; display:inline-block;"></span>
+          <span class="label">All systems operational</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const io = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight) { el.classList.add('in'); }
+      else { io.observe(el); }
+    });
+  </script>
+</body>
+</html>
