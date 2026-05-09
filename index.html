@@ -242,81 +242,215 @@
   </div>
 
   <!-- ========= THE NETWORK ========= -->
-  <section id="network" class="py-24 md:py-32">
-    <div class="max-w-6xl mx-auto px-6">
+  <section id="network" class="py-24 md:py-32 relative overflow-hidden">
+    <!-- Subtle dot grid background -->
+    <div class="absolute inset-0 opacity-[0.025] pointer-events-none" style="background-image: radial-gradient(circle, #0F1117 1px, transparent 1px); background-size: 28px 28px;"></div>
+    <!-- Soft teal radial glow behind hub -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full opacity-[0.05] pointer-events-none" style="background: radial-gradient(circle, #0D9488 0%, transparent 70%);"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
       <div class="text-center mb-16">
         <p class="reveal text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">The network</p>
-        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-foreground">One platform.<br/>Every lost item.</h2>
+        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-foreground">Everything,<br/><span class="text-gradient">connected.</span></h2>
         <p class="reveal reveal-delay-2 mt-5 text-slate-500 max-w-2xl mx-auto leading-relaxed">
-          Lost your phone in a taxi? Left a bag at the airport? Dropped your wallet at a concert? Rekovr connects all the dots — individuals, transport companies, airports, venues, and more — into one intelligent network.
+          Lost your phone in a taxi? Left a bag at the airport? Dropped your wallet at a concert? Rekovr connects the dots between individuals, transport, infrastructure, and venues — into one intelligent network.
         </p>
       </div>
 
-      <!-- Hub: center -->
-      <div class="reveal reveal-delay-2 relative">
-        <div class="flex justify-center mb-10">
+      <!-- ============================================== -->
+      <!-- DESKTOP: Radial network diagram                -->
+      <!-- ============================================== -->
+      <div class="reveal reveal-delay-2 hidden md:block relative max-w-3xl mx-auto" style="aspect-ratio: 5 / 3;">
+        <!-- SVG: connection lines + animated energy pulses -->
+        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 500 300" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="net-grad-tl" x1="50%" y1="50%" x2="0%" y2="0%">
+              <stop offset="0%" stop-color="#0D9488" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#0D9488" stop-opacity="0.05"/>
+            </linearGradient>
+            <linearGradient id="net-grad-tr" x1="50%" y1="50%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#0D9488" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#0D9488" stop-opacity="0.05"/>
+            </linearGradient>
+            <linearGradient id="net-grad-bl" x1="50%" y1="50%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#0D9488" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#0D9488" stop-opacity="0.05"/>
+            </linearGradient>
+            <linearGradient id="net-grad-br" x1="50%" y1="50%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0D9488" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#0D9488" stop-opacity="0.05"/>
+            </linearGradient>
+          </defs>
+          <!-- Connection lines from hub (250,150) to each node -->
+          <line x1="250" y1="150" x2="80" y2="40" stroke="url(#net-grad-tl)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+          <line x1="250" y1="150" x2="420" y2="40" stroke="url(#net-grad-tr)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+          <line x1="250" y1="150" x2="80" y2="260" stroke="url(#net-grad-bl)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+          <line x1="250" y1="150" x2="420" y2="260" stroke="url(#net-grad-br)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+          <!-- Energy pulses traveling outward -->
+          <circle r="3.5" fill="#14B8A6">
+            <animateMotion dur="2.6s" repeatCount="indefinite" path="M250,150 L80,40"/>
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.6s" repeatCount="indefinite"/>
+          </circle>
+          <circle r="3.5" fill="#14B8A6">
+            <animateMotion dur="2.6s" begin="0.65s" repeatCount="indefinite" path="M250,150 L420,40"/>
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.6s" begin="0.65s" repeatCount="indefinite"/>
+          </circle>
+          <circle r="3.5" fill="#14B8A6">
+            <animateMotion dur="2.6s" begin="1.3s" repeatCount="indefinite" path="M250,150 L80,260"/>
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.6s" begin="1.3s" repeatCount="indefinite"/>
+          </circle>
+          <circle r="3.5" fill="#14B8A6">
+            <animateMotion dur="2.6s" begin="1.95s" repeatCount="indefinite" path="M250,150 L420,260"/>
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.6s" begin="1.95s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+
+        <!-- HUB (centered) -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
           <div class="relative">
-            <div class="pulse-ring absolute inset-0 rounded-full border border-primary/20"></div>
-            <div class="pulse-ring absolute inset-0 rounded-full border border-primary/10" style="animation-delay: 0.8s;"></div>
-            <div class="relative z-10 w-20 h-20 bg-foreground rounded-2xl flex flex-col items-center justify-center shadow-xl shadow-foreground/20">
-              <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/></svg>
+            <div class="pulse-ring absolute inset-0 rounded-2xl border border-primary/25"></div>
+            <div class="pulse-ring absolute inset-0 rounded-2xl border border-primary/15" style="animation-delay: 0.8s;"></div>
+            <div class="relative z-10 w-28 h-28 rounded-2xl flex flex-col items-center justify-center shadow-2xl shadow-primary/30" style="background: radial-gradient(circle at 30% 25%, #1F2937 0%, #0F1117 100%); border: 1px solid rgba(13,148,136,0.3);">
+              <svg class="w-9 h-9 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/></svg>
+              <span class="mt-1 text-[10px] font-extrabold text-white tracking-widest uppercase">Rekovr</span>
             </div>
           </div>
         </div>
 
-        <!-- Spoke cards -->
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          <div class="group bg-foreground rounded-2xl p-5 flex flex-col items-center text-center transition hover:scale-[1.02] cursor-default">
-            <div class="w-11 h-11 bg-white/10 rounded-xl flex items-center justify-center mb-3">
-              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
+        <!-- TOP LEFT: Individuals (C2C) -->
+        <div class="absolute z-10" style="top: 0; left: 0; width: 240px;">
+          <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-lg shadow-slate-900/[0.04] hover:shadow-xl hover:border-primary/40 transition">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 flex-shrink-0 rounded-xl flex items-center justify-center" style="background:#F0FDFA; border:1px solid #CCFBF1;">
+                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-1.5 mb-1">
+                  <p class="text-sm font-bold text-foreground">Individuals</p>
+                  <span class="text-[9px] font-bold px-1.5 py-0.5 rounded-full" style="background:rgba(13,148,136,0.12); color:#0D9488;">C2C</span>
+                </div>
+                <p class="text-[11px] text-muted leading-tight">Anyone who finds or loses an item</p>
+              </div>
             </div>
-            <p class="text-sm font-bold text-white">You</p>
-            <p class="text-[11px] text-slate-400 mt-1 leading-tight">Report your lost item</p>
-            <span class="mt-3 inline-block px-2 py-0.5 text-[10px] font-semibold rounded-full" style="background:rgba(13,148,136,0.2); color:#14B8A6;">C2C</span>
-          </div>
-          <div class="group bg-white rounded-2xl border border-slate-100 p-5 flex flex-col items-center text-center hover:border-slate-200 transition hover:scale-[1.02] cursor-default">
-            <div class="w-11 h-11 bg-surface rounded-xl flex items-center justify-center mb-3">
-              <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H6.375c-.621 0-1.125-.504-1.125-1.125V14.25m17.25 0V8.625c0-.621-.504-1.125-1.125-1.125h-2.764a1.125 1.125 0 01-.894-.447l-1.378-1.838A1.125 1.125 0 0015.896 5H14.25"/></svg>
-            </div>
-            <p class="text-sm font-bold text-foreground">Transport</p>
-            <p class="text-[11px] text-muted mt-1 leading-tight">Taxis, buses, trains</p>
-            <span class="mt-3 inline-block px-2 py-0.5 text-[10px] font-semibold bg-slate-100 text-slate-500 rounded-full">B2B</span>
-          </div>
-          <div class="group bg-white rounded-2xl border border-slate-100 p-5 flex flex-col items-center text-center hover:border-slate-200 transition hover:scale-[1.02] cursor-default">
-            <div class="w-11 h-11 bg-surface rounded-xl flex items-center justify-center mb-3">
-              <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
-            </div>
-            <p class="text-sm font-bold text-foreground">Airports</p>
-            <p class="text-[11px] text-muted mt-1 leading-tight">Terminals, lounges</p>
-            <span class="mt-3 inline-block px-2 py-0.5 text-[10px] font-semibold bg-slate-100 text-slate-500 rounded-full">B2B</span>
-          </div>
-          <div class="group bg-white rounded-2xl border border-slate-100 p-5 flex flex-col items-center text-center hover:border-slate-200 transition hover:scale-[1.02] cursor-default">
-            <div class="w-11 h-11 bg-surface rounded-xl flex items-center justify-center mb-3">
-              <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"/></svg>
-            </div>
-            <p class="text-sm font-bold text-foreground">Events</p>
-            <p class="text-[11px] text-muted mt-1 leading-tight">Concerts, festivals</p>
-            <span class="mt-3 inline-block px-2 py-0.5 text-[10px] font-semibold bg-slate-100 text-slate-500 rounded-full">B2B</span>
-          </div>
-          <div class="group bg-white rounded-2xl border border-slate-100 p-5 flex flex-col items-center text-center hover:border-slate-200 transition hover:scale-[1.02] cursor-default">
-            <div class="w-11 h-11 bg-surface rounded-xl flex items-center justify-center mb-3">
-              <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819"/></svg>
-            </div>
-            <p class="text-sm font-bold text-foreground">Hotels</p>
-            <p class="text-[11px] text-muted mt-1 leading-tight">Resorts, restaurants</p>
-            <span class="mt-3 inline-block px-2 py-0.5 text-[10px] font-semibold bg-slate-100 text-slate-500 rounded-full">B2B</span>
-          </div>
-          <div class="group bg-white rounded-2xl border border-slate-100 p-5 flex flex-col items-center text-center hover:border-slate-200 transition hover:scale-[1.02] cursor-default">
-            <div class="w-11 h-11 bg-surface rounded-xl flex items-center justify-center mb-3">
-              <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
-            </div>
-            <p class="text-sm font-bold text-foreground">Communities</p>
-            <p class="text-[11px] text-muted mt-1 leading-tight">Campuses, cities</p>
-            <span class="mt-3 inline-block px-2 py-0.5 text-[10px] font-semibold bg-slate-100 text-slate-500 rounded-full">B2B</span>
           </div>
         </div>
-        <p class="text-center text-xs text-slate-400 mt-6">All connected through <span class="text-foreground font-semibold">Rekovr AI</span> — matching happens across the entire network, automatically.</p>
+
+        <!-- TOP RIGHT: Transport -->
+        <div class="absolute z-10" style="top: 0; right: 0; width: 240px;">
+          <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-lg shadow-slate-900/[0.04] hover:shadow-xl hover:border-primary/40 transition">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 flex-shrink-0 bg-slate-100 rounded-xl flex items-center justify-center">
+                <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H6.375c-.621 0-1.125-.504-1.125-1.125V14.25m17.25 0V8.625c0-.621-.504-1.125-1.125-1.125h-2.764a1.125 1.125 0 01-.894-.447l-1.378-1.838A1.125 1.125 0 0015.896 5H14.25"/></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-1.5 mb-1">
+                  <p class="text-sm font-bold text-foreground">Transport</p>
+                  <span class="text-[9px] font-bold px-1.5 py-0.5 bg-slate-100 text-slate-500 rounded-full">B2B</span>
+                </div>
+                <p class="text-[11px] text-muted leading-tight">Taxi fleets, buses, trains</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTTOM LEFT: Infrastructure -->
+        <div class="absolute z-10" style="bottom: 0; left: 0; width: 240px;">
+          <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-lg shadow-slate-900/[0.04] hover:shadow-xl hover:border-primary/40 transition">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 flex-shrink-0 bg-slate-100 rounded-xl flex items-center justify-center">
+                <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21"/></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-1.5 mb-1">
+                  <p class="text-sm font-bold text-foreground">Infrastructure</p>
+                  <span class="text-[9px] font-bold px-1.5 py-0.5 bg-slate-100 text-slate-500 rounded-full">B2B</span>
+                </div>
+                <p class="text-[11px] text-muted leading-tight">Airports, councils, campuses</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTTOM RIGHT: Events & venues -->
+        <div class="absolute z-10" style="bottom: 0; right: 0; width: 240px;">
+          <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-lg shadow-slate-900/[0.04] hover:shadow-xl hover:border-primary/40 transition">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 flex-shrink-0 bg-slate-100 rounded-xl flex items-center justify-center">
+                <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"/></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-1.5 mb-1">
+                  <p class="text-sm font-bold text-foreground">Events &amp; venues</p>
+                  <span class="text-[9px] font-bold px-1.5 py-0.5 bg-slate-100 text-slate-500 rounded-full">B2B</span>
+                </div>
+                <p class="text-[11px] text-muted leading-tight">Festivals, stadiums, hotels</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- ============================================== -->
+      <!-- MOBILE: Hub on top + 2x2 grid                  -->
+      <!-- ============================================== -->
+      <div class="reveal reveal-delay-2 md:hidden">
+        <div class="flex justify-center mb-8">
+          <div class="relative">
+            <div class="pulse-ring absolute inset-0 rounded-2xl border border-primary/25"></div>
+            <div class="pulse-ring absolute inset-0 rounded-2xl border border-primary/15" style="animation-delay: 0.8s;"></div>
+            <div class="relative z-10 w-24 h-24 rounded-2xl flex flex-col items-center justify-center shadow-xl shadow-primary/25" style="background: radial-gradient(circle at 30% 25%, #1F2937 0%, #0F1117 100%); border: 1px solid rgba(13,148,136,0.3);">
+              <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09z"/></svg>
+              <span class="mt-1 text-[9px] font-extrabold text-white tracking-widest uppercase">Rekovr</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-white rounded-2xl border border-slate-200 p-4">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center mb-2" style="background:#F0FDFA; border:1px solid #CCFBF1;">
+              <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
+            </div>
+            <div class="flex items-center gap-1.5 mb-1">
+              <p class="text-sm font-bold text-foreground">Individuals</p>
+              <span class="text-[9px] font-bold px-1.5 py-0.5 rounded-full" style="background:rgba(13,148,136,0.12); color:#0D9488;">C2C</span>
+            </div>
+            <p class="text-[11px] text-muted leading-tight">Finds or loses on the street</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-slate-200 p-4">
+            <div class="w-9 h-9 bg-slate-100 rounded-xl flex items-center justify-center mb-2">
+              <svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H6.375c-.621 0-1.125-.504-1.125-1.125V14.25m17.25 0V8.625c0-.621-.504-1.125-1.125-1.125h-2.764a1.125 1.125 0 01-.894-.447l-1.378-1.838A1.125 1.125 0 0015.896 5H14.25"/></svg>
+            </div>
+            <div class="flex items-center gap-1.5 mb-1">
+              <p class="text-sm font-bold text-foreground">Transport</p>
+              <span class="text-[9px] font-bold px-1.5 py-0.5 bg-slate-100 text-slate-500 rounded-full">B2B</span>
+            </div>
+            <p class="text-[11px] text-muted leading-tight">Taxi fleets, buses, trains</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-slate-200 p-4">
+            <div class="w-9 h-9 bg-slate-100 rounded-xl flex items-center justify-center mb-2">
+              <svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21"/></svg>
+            </div>
+            <div class="flex items-center gap-1.5 mb-1">
+              <p class="text-sm font-bold text-foreground">Infrastructure</p>
+              <span class="text-[9px] font-bold px-1.5 py-0.5 bg-slate-100 text-slate-500 rounded-full">B2B</span>
+            </div>
+            <p class="text-[11px] text-muted leading-tight">Airports, councils, campuses</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-slate-200 p-4">
+            <div class="w-9 h-9 bg-slate-100 rounded-xl flex items-center justify-center mb-2">
+              <svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"/></svg>
+            </div>
+            <div class="flex items-center gap-1.5 mb-1">
+              <p class="text-sm font-bold text-foreground">Venues</p>
+              <span class="text-[9px] font-bold px-1.5 py-0.5 bg-slate-100 text-slate-500 rounded-full">B2B</span>
+            </div>
+            <p class="text-[11px] text-muted leading-tight">Festivals, stadiums, hotels</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="reveal text-center text-sm text-slate-400 mt-12 max-w-md mx-auto">
+        All connected through <span class="text-foreground font-semibold">Rekovr AI</span> — matching happens across the entire network, automatically.
+      </p>
     </div>
   </section>
 
