@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rekovr Logo — LinkedIn Banner 1128x191</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 1128px;
+    height: 191px;
+    background: #0F1117;
+    position: relative;
+    overflow: hidden;
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #ffffff;
+  }
+  .blob1 {
+    position: absolute;
+    top: -120px;
+    right: -80px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(13,148,136,0.35), transparent 70%);
+    filter: blur(8px);
+  }
+  .blob2 {
+    position: absolute;
+    bottom: -160px;
+    left: 240px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(8,145,178,0.18), transparent 70%);
+    filter: blur(8px);
+  }
+  .grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+    background-size: 22px 22px;
+    opacity: 0.6;
+  }
+  .container {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 96px 0 56px;
+  }
+  .tag {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tag .head {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 56px;
+    color: #ffffff;
+    letter-spacing: -0.025em;
+    line-height: 1;
+  }
+  .tag .head .accent { color: #14B8A6; }
+  .tag .sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    color: #94A3B8;
+    letter-spacing: 0.02em;
+  }
+  .badge {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(245,158,11,0.10);
+    border: 1px solid rgba(245,158,11,0.25);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #FCD34D;
+  }
+  .badge .dot-amber {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #F59E0B;
+  }
+</style>
+</head>
+<body>
+  <div class="blob1"></div>
+  <div class="blob2"></div>
+  <div class="grid"></div>
+  <div class="container">
+    <div class="tag">
+      <span class="head">Recover what <span class="accent">matters.</span></span>
+      <span class="sub">The global AI-powered lost &amp; found platform</span>
+    </div>
+  </div>
+</body>
+</html>
