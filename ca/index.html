@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rekovr — Recover what matters. The lost & found platform.</title>
-  <meta name="description" content="The global lost & found platform. Rekovr connects people and organizations with AI-powered matching to reunite lost items with their owners." />
-  <link rel="canonical" href="https://rekovr.ai/" />
+  <title>Rekovr — Recupera el que importa. La plataforma d'objectes perduts.</title>
+  <meta name="description" content="La plataforma global d'objectes perduts. Rekovr connecta persones i organitzacions amb matching impulsat per IA per retornar els objectes perduts als seus propietaris." />
+  <link rel="canonical" href="https://rekovr.ai/ca/" />
   <link rel="alternate" hreflang="en" href="https://rekovr.ai/" />
   <link rel="alternate" hreflang="es" href="https://rekovr.ai/es/" />
   <link rel="alternate" hreflang="ca" href="https://rekovr.ai/ca/" />
   <link rel="alternate" hreflang="x-default" href="https://rekovr.ai/" />
-  <meta property="og:title" content="Rekovr — Recover what matters." />
-  <meta property="og:description" content="The global lost & found platform. AI connects lost items with their owners — whether found by a person, a taxi, an airport, or any organization." />
+  <meta property="og:title" content="Rekovr — Recupera el que importa." />
+  <meta property="og:description" content="La plataforma global d'objectes perduts. La IA connecta els objectes perduts amb els seus propietaris — sigui un particular, un taxi, un aeroport o qualsevol organització." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rekovr.ai/" />
+  <meta property="og:url" content="https://rekovr.ai/ca/" />
   <meta property="og:image" content="https://rekovr.ai/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Rekovr — Recover what matters. The global AI-powered lost & found platform." />
+  <meta property="og:image:alt" content="Rekovr — Recupera el que importa. La plataforma global d'objectes perduts amb IA." />
+  <meta property="og:locale" content="ca_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="es_ES" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://rekovr.ai/assets/og-image.png" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='5' y='3' width='5' height='26' rx='1' fill='%230F1117'/><line x1='10' y1='16' x2='24' y2='5' stroke='%230D9488' stroke-width='3.5' stroke-linecap='round'/><line x1='10' y1='16' x2='24' y2='27' stroke='%230D9488' stroke-width='3.5' stroke-linecap='round'/></svg>" type="image/svg+xml" />
@@ -52,7 +55,6 @@
     body { font-family: 'DM Sans', -apple-system, sans-serif; color: #0F1117; background: #fff; -webkit-font-smoothing: antialiased; }
     h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', sans-serif; }
 
-    /* Scroll animations */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -66,7 +68,6 @@
     .reveal-delay-5 { transition-delay: 0.40s; }
     .reveal-delay-6 { transition-delay: 0.48s; }
 
-    /* Hero gradient blob */
     @keyframes blob-float {
       0%, 100% { transform: translate(0, 0) scale(1); }
       33% { transform: translate(30px, -20px) scale(1.05); }
@@ -75,7 +76,6 @@
     .blob { animation: blob-float 12s ease-in-out infinite; }
     .blob-2 { animation: blob-float 16s ease-in-out infinite reverse; animation-delay: -4s; }
 
-    /* Grain overlay */
     .grain::after {
       content: '';
       position: absolute;
@@ -85,7 +85,6 @@
       z-index: 0;
     }
 
-    /* Teal text gradient */
     .text-gradient {
       background: linear-gradient(135deg, #0D9488 0%, #0891B2 100%);
       -webkit-background-clip: text;
@@ -93,7 +92,6 @@
       background-clip: text;
     }
 
-    /* Network hub pulse */
     @keyframes pulse-ring {
       0% { transform: scale(1); opacity: 0.4; }
       100% { transform: scale(1.8); opacity: 0; }
@@ -102,18 +100,14 @@
       animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
     }
 
-    /* Nav scroll effect */
     .nav-scrolled { box-shadow: 0 1px 0 rgba(0,0,0,0.06); }
 
-    /* Feature card hover */
     .feature-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
     .feature-card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(13,148,136,0.08); }
 
-    /* Org card hover */
     .org-card { transition: background 0.2s ease, border-color 0.2s ease; }
     .org-card:hover { background: rgba(13,148,136,0.04); border-color: rgba(13,148,136,0.2); }
 
-    /* Ticker */
     @keyframes ticker {
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
@@ -121,7 +115,6 @@
     .ticker-inner { animation: ticker 28s linear infinite; }
     .ticker-inner:hover { animation-play-state: paused; }
 
-    /* Pricing highlight */
     .plan-highlight::before {
       content: '';
       position: absolute;
@@ -145,27 +138,27 @@
           <span class="text-xl font-extrabold tracking-tight text-foreground font-heading">re<span class="k-bicolor"><span class="k-left">k</span><span class="k-right">k</span></span>ovr<span style="color:#14B8A6">.</span></span>
         </a>
         <div class="hidden md:flex items-center gap-1">
-          <a href="#how" class="px-3 py-1.5 text-sm text-slate-500 hover:text-foreground hover:bg-slate-50 rounded-lg transition">How it works</a>
-          <a href="#network" class="px-3 py-1.5 text-sm text-slate-500 hover:text-foreground hover:bg-slate-50 rounded-lg transition">The network</a>
-          <a href="#business" class="px-3 py-1.5 text-sm text-slate-500 hover:text-foreground hover:bg-slate-50 rounded-lg transition">For business</a>
-          <a href="#pilot" class="px-3 py-1.5 text-sm text-slate-500 hover:text-foreground hover:bg-slate-50 rounded-lg transition">Pilot program</a>
+          <a href="#how" class="px-3 py-1.5 text-sm text-slate-500 hover:text-foreground hover:bg-slate-50 rounded-lg transition">Com funciona</a>
+          <a href="#network" class="px-3 py-1.5 text-sm text-slate-500 hover:text-foreground hover:bg-slate-50 rounded-lg transition">La xarxa</a>
+          <a href="#business" class="px-3 py-1.5 text-sm text-slate-500 hover:text-foreground hover:bg-slate-50 rounded-lg transition">Per a empreses</a>
+          <a href="#pilot" class="px-3 py-1.5 text-sm text-slate-500 hover:text-foreground hover:bg-slate-50 rounded-lg transition">Programa pilot</a>
         </div>
         <div class="flex items-center gap-2">
-          <a href="#business" class="hidden sm:inline-flex items-center justify-center h-9 px-4 text-sm font-medium text-slate-600 hover:text-foreground transition">For organizations</a>
+          <a href="#business" class="hidden sm:inline-flex items-center justify-center h-9 px-4 text-sm font-medium text-slate-600 hover:text-foreground transition">Per a organitzacions</a>
           <!-- Language switcher -->
           <div class="relative" data-lang-switcher>
-            <button type="button" class="inline-flex items-center gap-1.5 h-9 px-2.5 text-sm text-slate-500 hover:text-foreground hover:bg-slate-50 rounded-lg transition" aria-haspopup="menu" aria-expanded="false" aria-label="Change language">
+            <button type="button" class="inline-flex items-center gap-1.5 h-9 px-2.5 text-sm text-slate-500 hover:text-foreground hover:bg-slate-50 rounded-lg transition" aria-haspopup="menu" aria-expanded="false" aria-label="Canviar idioma">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.6 9h16.8M3.6 15h16.8M12 3a13.5 13.5 0 010 18M12 3a13.5 13.5 0 000 18"/></svg>
-              <span class="font-medium">EN</span>
+              <span class="font-medium">CA</span>
               <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <div class="hidden absolute right-0 top-full mt-1 w-44 bg-white border border-slate-200 rounded-xl shadow-lg shadow-slate-900/[0.06] py-1 z-50" role="menu" data-lang-menu>
-              <a href="./index.html" class="flex items-center justify-between px-3 py-2 mx-1 text-sm font-medium text-foreground bg-slate-50 rounded-md" role="menuitem" aria-current="true"><span>English</span><span class="text-[10px] text-slate-400 font-mono tracking-wider">EN</span></a>
-              <a href="es/index.html" class="flex items-center justify-between px-3 py-2 mx-1 text-sm text-slate-600 hover:bg-slate-50 rounded-md transition" role="menuitem"><span>Español</span><span class="text-[10px] text-slate-400 font-mono tracking-wider">ES</span></a>
-              <a href="ca/index.html" class="flex items-center justify-between px-3 py-2 mx-1 text-sm text-slate-600 hover:bg-slate-50 rounded-md transition" role="menuitem"><span>Català</span><span class="text-[10px] text-slate-400 font-mono tracking-wider">CA</span></a>
+              <a href="../index.html" class="flex items-center justify-between px-3 py-2 mx-1 text-sm text-slate-600 hover:bg-slate-50 rounded-md transition" role="menuitem"><span>English</span><span class="text-[10px] text-slate-400 font-mono tracking-wider">EN</span></a>
+              <a href="../es/index.html" class="flex items-center justify-between px-3 py-2 mx-1 text-sm text-slate-600 hover:bg-slate-50 rounded-md transition" role="menuitem"><span>Español</span><span class="text-[10px] text-slate-400 font-mono tracking-wider">ES</span></a>
+              <a href="./index.html" class="flex items-center justify-between px-3 py-2 mx-1 text-sm font-medium text-foreground bg-slate-50 rounded-md" role="menuitem" aria-current="true"><span>Català</span><span class="text-[10px] text-slate-400 font-mono tracking-wider">CA</span></a>
             </div>
           </div>
-          <a href="https://app.rekovr.ai" class="inline-flex items-center justify-center h-9 px-5 text-sm font-semibold text-white bg-foreground rounded-full hover:bg-slate-800 transition">Open App</a>
+          <a href="https://app.rekovr.ai" class="inline-flex items-center justify-center h-9 px-5 text-sm font-semibold text-white bg-foreground rounded-full hover:bg-slate-800 transition">Obrir app</a>
         </div>
       </div>
     </div>
@@ -173,62 +166,55 @@
 
   <!-- ========= HERO ========= -->
   <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden grain">
-    <!-- Background blobs -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
       <div class="blob absolute top-1/4 right-1/4 w-[600px] h-[600px] rounded-full opacity-[0.08]" style="background: radial-gradient(circle, #0D9488 0%, transparent 70%);"></div>
       <div class="blob-2 absolute bottom-1/3 left-1/4 w-[400px] h-[400px] rounded-full opacity-[0.05]" style="background: radial-gradient(circle, #0891B2 0%, transparent 70%);"></div>
-      <!-- Dot grid -->
       <div class="absolute inset-0 opacity-[0.025]" style="background-image: radial-gradient(circle, #0F1117 1px, transparent 1px); background-size: 28px 28px;"></div>
     </div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-6 py-24 text-center">
-      <!-- Badge -->
       <div class="reveal inline-flex items-center gap-2 mb-8 px-4 py-1.5 bg-teal-50 border border-teal-200/60 rounded-full">
         <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-        <span class="text-xs font-semibold text-teal-700 tracking-wide uppercase">The lost &amp; found platform</span>
+        <span class="text-xs font-semibold text-teal-700 tracking-wide uppercase">La plataforma d'objectes perduts</span>
       </div>
 
-      <!-- Main headline -->
       <h1 class="reveal reveal-delay-1 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-[-0.04em] text-foreground">
-        Recover<br/>
-        <span class="text-gradient">what matters.</span>
+        Recupera<br/>
+        <span class="text-gradient">el que importa.</span>
       </h1>
 
       <p class="reveal reveal-delay-2 mt-8 text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-body">
-        The global network that connects people and organizations to reunite lost items with their owners — powered by AI, built on trust.
+        La xarxa global que connecta persones i organitzacions per retornar els objectes perduts als seus propietaris — impulsada per IA, construïda sobre la confiança.
       </p>
 
       <div class="reveal reveal-delay-3 mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
         <a href="https://app.rekovr.ai" class="group inline-flex items-center justify-center h-13 px-8 text-base font-semibold text-white bg-foreground rounded-full hover:bg-slate-800 transition shadow-lg shadow-foreground/15">
-          Get started — it's free
+          Comença gratis
           <svg class="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         </a>
         <a href="#business" class="group inline-flex items-center justify-center h-13 px-8 text-base font-medium text-slate-700 bg-slate-100 rounded-full hover:bg-slate-200 transition">
-          For organizations
+          Per a organitzacions
           <svg class="ml-2 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </a>
       </div>
 
-      <!-- Beta disclaimer -->
       <p class="reveal reveal-delay-3 mt-4 text-xs text-slate-400">
         <span class="inline-flex items-center gap-1.5">
           <svg class="w-3 h-3 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-12.25v5.5a.75.75 0 01-1.5 0v-5.5a.75.75 0 011.5 0zM10 15a1 1 0 100-2 1 1 0 000 2z"/></svg>
-          Free during beta — recovery fees will apply at general launch.
+          Gratis durant la beta — s'aplicaran tarifes de recuperació al llançament general.
         </span>
       </p>
 
-      <!-- Trust strip -->
       <div class="reveal reveal-delay-4 mt-16 flex items-center justify-center gap-3 text-xs text-slate-400">
-        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>No credit card required</span>
+        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>Sense targeta de crèdit</span>
         <span class="w-px h-3 bg-slate-200"></span>
-        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>Private &amp; secure</span>
+        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>Privat i segur</span>
         <span class="w-px h-3 bg-slate-200"></span>
-        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>AI-powered</span>
+        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>Impulsat per IA</span>
       </div>
     </div>
 
-    <!-- Scroll hint -->
-    <a href="#network" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group opacity-50 hover:opacity-100 transition">
+    <a href="#network" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group opacity-50 hover:opacity-100 transition" aria-label="Baixar a la següent secció">
       <svg class="w-5 h-5 text-slate-400 animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
     </a>
   </section>
@@ -239,32 +225,32 @@
       <template id="ticker-items">
         <span class="inline-flex items-center gap-2 px-8 text-sm font-medium text-slate-400">
           <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
-          Airports &amp; Terminals
+          Aeroports i terminals
         </span>
         <span class="text-slate-200 font-thin">|</span>
         <span class="inline-flex items-center gap-2 px-8 text-sm font-medium text-slate-400">
           <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H6.375c-.621 0-1.125-.504-1.125-1.125V14.25m17.25 0V8.625c0-.621-.504-1.125-1.125-1.125h-2.764a1.125 1.125 0 01-.894-.447l-1.378-1.838A1.125 1.125 0 0015.896 5H14.25"/></svg>
-          Taxi &amp; Transport Fleets
+          Flotes de taxi i transport
         </span>
         <span class="text-slate-200 font-thin">|</span>
         <span class="inline-flex items-center gap-2 px-8 text-sm font-medium text-slate-400">
           <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21"/></svg>
-          City Councils
+          Ajuntaments
         </span>
         <span class="text-slate-200 font-thin">|</span>
         <span class="inline-flex items-center gap-2 px-8 text-sm font-medium text-slate-400">
           <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"/></svg>
-          Events &amp; Festivals
+          Esdeveniments i festivals
         </span>
         <span class="text-slate-200 font-thin">|</span>
         <span class="inline-flex items-center gap-2 px-8 text-sm font-medium text-slate-400">
           <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819"/></svg>
-          Hotels &amp; Hospitality
+          Hotels i hostaleria
         </span>
         <span class="text-slate-200 font-thin">|</span>
         <span class="inline-flex items-center gap-2 px-8 text-sm font-medium text-slate-400">
           <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342"/></svg>
-          Universities &amp; Campuses
+          Universitats i campus
         </span>
         <span class="text-slate-200 font-thin">|</span>
       </template>
@@ -274,25 +260,20 @@
 
   <!-- ========= THE NETWORK ========= -->
   <section id="network" class="py-24 md:py-32 relative overflow-hidden">
-    <!-- Subtle dot grid background -->
     <div class="absolute inset-0 opacity-[0.025] pointer-events-none" style="background-image: radial-gradient(circle, #0F1117 1px, transparent 1px); background-size: 28px 28px;"></div>
-    <!-- Soft teal radial glow behind hub -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full opacity-[0.05] pointer-events-none" style="background: radial-gradient(circle, #0D9488 0%, transparent 70%);"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto px-6">
       <div class="text-center mb-16">
-        <p class="reveal text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">The network</p>
-        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-foreground">Everything,<br/><span class="text-gradient">connected.</span></h2>
+        <p class="reveal text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">La xarxa</p>
+        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-foreground">Tot,<br/><span class="text-gradient">connectat.</span></h2>
         <p class="reveal reveal-delay-2 mt-5 text-slate-500 max-w-2xl mx-auto leading-relaxed">
-          Lost your phone in a taxi? Left a bag at the airport? Dropped your wallet at a concert? Rekovr connects the dots between individuals, transport, infrastructure, and venues — into one intelligent network.
+          T'has deixat el mòbil en un taxi? Una bossa a l'aeroport? Se t'ha caigut la cartera en un concert? Rekovr connecta els punts entre persones, transport, infraestructura i locals — en una sola xarxa intel·ligent.
         </p>
       </div>
 
-      <!-- ============================================== -->
-      <!-- DESKTOP: Radial network diagram                -->
-      <!-- ============================================== -->
+      <!-- DESKTOP: Radial network diagram -->
       <div class="reveal reveal-delay-2 hidden md:block relative max-w-3xl mx-auto" style="aspect-ratio: 5 / 3;">
-        <!-- SVG: connection lines + animated energy pulses -->
         <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 500 300" preserveAspectRatio="none">
           <defs>
             <linearGradient id="net-grad-tl" x1="50%" y1="50%" x2="0%" y2="0%">
@@ -312,12 +293,10 @@
               <stop offset="100%" stop-color="#0D9488" stop-opacity="0.05"/>
             </linearGradient>
           </defs>
-          <!-- Connection lines from hub (250,150) to each node -->
           <line x1="250" y1="150" x2="80" y2="40" stroke="url(#net-grad-tl)" stroke-width="2" vector-effect="non-scaling-stroke"/>
           <line x1="250" y1="150" x2="420" y2="40" stroke="url(#net-grad-tr)" stroke-width="2" vector-effect="non-scaling-stroke"/>
           <line x1="250" y1="150" x2="80" y2="260" stroke="url(#net-grad-bl)" stroke-width="2" vector-effect="non-scaling-stroke"/>
           <line x1="250" y1="150" x2="420" y2="260" stroke="url(#net-grad-br)" stroke-width="2" vector-effect="non-scaling-stroke"/>
-          <!-- Energy pulses traveling outward -->
           <circle r="3.5" fill="#14B8A6">
             <animateMotion dur="2.6s" repeatCount="indefinite" path="M250,150 L80,40"/>
             <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.6s" repeatCount="indefinite"/>
@@ -336,7 +315,6 @@
           </circle>
         </svg>
 
-        <!-- HUB (centered) -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
           <div class="relative">
             <div class="pulse-ring absolute inset-0 rounded-2xl border border-primary/25"></div>
@@ -348,7 +326,6 @@
           </div>
         </div>
 
-        <!-- TOP LEFT: Individuals (C2C) -->
         <div class="absolute z-10" style="top: 0; left: 0; width: 240px;">
           <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-lg shadow-slate-900/[0.04] hover:shadow-xl hover:border-primary/40 transition">
             <div class="flex items-start gap-3">
@@ -357,16 +334,15 @@
               </div>
               <div class="flex-1 min-w-0">
                 <div class="flex items-center gap-1.5 mb-1">
-                  <p class="text-sm font-bold text-foreground">Individuals</p>
+                  <p class="text-sm font-bold text-foreground">Particulars</p>
                   <span class="text-[9px] font-bold px-1.5 py-0.5 rounded-full" style="background:rgba(13,148,136,0.12); color:#0D9488;">C2C</span>
                 </div>
-                <p class="text-[11px] text-muted leading-tight">Anyone who finds or loses an item</p>
+                <p class="text-[11px] text-muted leading-tight">Qualsevol que trobi o perdi un objecte</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- TOP RIGHT: Transport -->
         <div class="absolute z-10" style="top: 0; right: 0; width: 240px;">
           <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-lg shadow-slate-900/[0.04] hover:shadow-xl hover:border-primary/40 transition">
             <div class="flex items-start gap-3">
@@ -378,13 +354,12 @@
                   <p class="text-sm font-bold text-foreground">Transport</p>
                   <span class="text-[9px] font-bold px-1.5 py-0.5 bg-slate-100 text-slate-500 rounded-full">B2B</span>
                 </div>
-                <p class="text-[11px] text-muted leading-tight">Taxi fleets, buses, trains</p>
+                <p class="text-[11px] text-muted leading-tight">Flotes de taxi, autobusos, trens</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- BOTTOM LEFT: Infrastructure -->
         <div class="absolute z-10" style="bottom: 0; left: 0; width: 240px;">
           <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-lg shadow-slate-900/[0.04] hover:shadow-xl hover:border-primary/40 transition">
             <div class="flex items-start gap-3">
@@ -393,16 +368,15 @@
               </div>
               <div class="flex-1 min-w-0">
                 <div class="flex items-center gap-1.5 mb-1">
-                  <p class="text-sm font-bold text-foreground">Infrastructure</p>
+                  <p class="text-sm font-bold text-foreground">Infraestructura</p>
                   <span class="text-[9px] font-bold px-1.5 py-0.5 bg-slate-100 text-slate-500 rounded-full">B2B</span>
                 </div>
-                <p class="text-[11px] text-muted leading-tight">Airports, councils, campuses</p>
+                <p class="text-[11px] text-muted leading-tight">Aeroports, ajuntaments, campus</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- BOTTOM RIGHT: Events & venues -->
         <div class="absolute z-10" style="bottom: 0; right: 0; width: 240px;">
           <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-lg shadow-slate-900/[0.04] hover:shadow-xl hover:border-primary/40 transition">
             <div class="flex items-start gap-3">
@@ -411,19 +385,17 @@
               </div>
               <div class="flex-1 min-w-0">
                 <div class="flex items-center gap-1.5 mb-1">
-                  <p class="text-sm font-bold text-foreground">Events &amp; venues</p>
+                  <p class="text-sm font-bold text-foreground">Esdeveniments i locals</p>
                   <span class="text-[9px] font-bold px-1.5 py-0.5 bg-slate-100 text-slate-500 rounded-full">B2B</span>
                 </div>
-                <p class="text-[11px] text-muted leading-tight">Festivals, stadiums, hotels</p>
+                <p class="text-[11px] text-muted leading-tight">Festivals, estadis, hotels</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ============================================== -->
-      <!-- MOBILE: Hub on top + 2x2 grid                  -->
-      <!-- ============================================== -->
+      <!-- MOBILE: Hub on top + 2x2 grid -->
       <div class="reveal reveal-delay-2 md:hidden">
         <div class="flex justify-center mb-8">
           <div class="relative">
@@ -441,10 +413,10 @@
               <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
             </div>
             <div class="flex items-center gap-1.5 mb-1">
-              <p class="text-sm font-bold text-foreground">Individuals</p>
+              <p class="text-sm font-bold text-foreground">Particulars</p>
               <span class="text-[9px] font-bold px-1.5 py-0.5 rounded-full" style="background:rgba(13,148,136,0.12); color:#0D9488;">C2C</span>
             </div>
-            <p class="text-[11px] text-muted leading-tight">Finds or loses on the street</p>
+            <p class="text-[11px] text-muted leading-tight">Troba o perd alguna cosa al carrer</p>
           </div>
           <div class="bg-white rounded-2xl border border-slate-200 p-4">
             <div class="w-9 h-9 bg-slate-100 rounded-xl flex items-center justify-center mb-2">
@@ -454,33 +426,33 @@
               <p class="text-sm font-bold text-foreground">Transport</p>
               <span class="text-[9px] font-bold px-1.5 py-0.5 bg-slate-100 text-slate-500 rounded-full">B2B</span>
             </div>
-            <p class="text-[11px] text-muted leading-tight">Taxi fleets, buses, trains</p>
+            <p class="text-[11px] text-muted leading-tight">Flotes de taxi, autobusos, trens</p>
           </div>
           <div class="bg-white rounded-2xl border border-slate-200 p-4">
             <div class="w-9 h-9 bg-slate-100 rounded-xl flex items-center justify-center mb-2">
               <svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21"/></svg>
             </div>
             <div class="flex items-center gap-1.5 mb-1">
-              <p class="text-sm font-bold text-foreground">Infrastructure</p>
+              <p class="text-sm font-bold text-foreground">Infraestructura</p>
               <span class="text-[9px] font-bold px-1.5 py-0.5 bg-slate-100 text-slate-500 rounded-full">B2B</span>
             </div>
-            <p class="text-[11px] text-muted leading-tight">Airports, councils, campuses</p>
+            <p class="text-[11px] text-muted leading-tight">Aeroports, ajuntaments, campus</p>
           </div>
           <div class="bg-white rounded-2xl border border-slate-200 p-4">
             <div class="w-9 h-9 bg-slate-100 rounded-xl flex items-center justify-center mb-2">
               <svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"/></svg>
             </div>
             <div class="flex items-center gap-1.5 mb-1">
-              <p class="text-sm font-bold text-foreground">Venues</p>
+              <p class="text-sm font-bold text-foreground">Locals</p>
               <span class="text-[9px] font-bold px-1.5 py-0.5 bg-slate-100 text-slate-500 rounded-full">B2B</span>
             </div>
-            <p class="text-[11px] text-muted leading-tight">Festivals, stadiums, hotels</p>
+            <p class="text-[11px] text-muted leading-tight">Festivals, estadis, hotels</p>
           </div>
         </div>
       </div>
 
       <p class="reveal text-center text-sm text-slate-400 mt-12 max-w-md mx-auto">
-        All connected through <span class="text-foreground font-semibold">Rekovr AI</span> — matching happens across the entire network, automatically.
+        Tot connectat a través de <span class="text-foreground font-semibold">Rekovr AI</span> — el matching passa a tota la xarxa, de manera automàtica.
       </p>
     </div>
   </section>
@@ -489,8 +461,8 @@
   <section id="how" class="py-24 md:py-32 bg-surface">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16">
-        <p class="reveal text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">How it works</p>
-        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-foreground">Simple for everyone</h2>
+        <p class="reveal text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Com funciona</p>
+        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-foreground">Senzill per a tothom</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-4 md:gap-6">
         <div class="reveal reveal-delay-1 bg-white rounded-2xl p-8 border border-slate-100 relative overflow-hidden">
@@ -499,8 +471,8 @@
             <div class="w-12 h-12 bg-foreground rounded-xl flex items-center justify-center mb-5">
               <span class="font-heading font-black text-lg text-white">1</span>
             </div>
-            <h3 class="text-lg font-bold text-foreground mb-2">Report it</h3>
-            <p class="text-muted leading-relaxed text-sm">Lost or found something? Describe it, snap a photo, pin the location. Takes less than a minute.</p>
+            <h3 class="text-lg font-bold text-foreground mb-2">Reporta-ho</h3>
+            <p class="text-muted leading-relaxed text-sm">Has perdut o trobat alguna cosa? Descriu-ho, fes una foto, marca la ubicació. Menys d'un minut.</p>
           </div>
         </div>
         <div class="reveal reveal-delay-2 bg-white rounded-2xl p-8 border border-slate-100 relative overflow-hidden">
@@ -509,8 +481,8 @@
             <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:#0D9488;">
               <span class="font-heading font-black text-lg text-white">2</span>
             </div>
-            <h3 class="text-lg font-bold text-foreground mb-2">AI does the work</h3>
-            <p class="text-muted leading-relaxed text-sm">Our AI scans the entire network — people, transport companies, venues — analyzing descriptions, photos, locations, and timing to find matches.</p>
+            <h3 class="text-lg font-bold text-foreground mb-2">La IA fa la feina</h3>
+            <p class="text-muted leading-relaxed text-sm">La nostra IA escaneja tota la xarxa — persones, empreses de transport, locals — analitzant descripcions, fotos, ubicacions i moments per trobar coincidències.</p>
           </div>
         </div>
         <div class="reveal reveal-delay-3 bg-white rounded-2xl p-8 border border-slate-100 relative overflow-hidden">
@@ -519,8 +491,8 @@
             <div class="w-12 h-12 bg-foreground rounded-xl flex items-center justify-center mb-5">
               <span class="font-heading font-black text-lg text-white">3</span>
             </div>
-            <h3 class="text-lg font-bold text-foreground mb-2">Recover &amp; reward</h3>
-            <p class="text-muted leading-relaxed text-sm">Get notified when there's a match. Chat securely, verify ownership, and arrange the return. Finders get rewarded.</p>
+            <h3 class="text-lg font-bold text-foreground mb-2">Recupera i recompensa</h3>
+            <p class="text-muted leading-relaxed text-sm">Reps una notificació quan hi ha una coincidència. Xateja de manera segura, verifica la propietat i organitza el lliurament. Qui ho troba rep una recompensa.</p>
           </div>
         </div>
       </div>
@@ -533,19 +505,19 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div class="reveal text-center">
           <p class="text-4xl md:text-5xl font-black text-foreground font-heading tracking-tight">&lt;60<span class="text-primary text-3xl">s</span></p>
-          <p class="mt-2 text-sm text-muted">Average matching time</p>
+          <p class="mt-2 text-sm text-muted">Temps mitjà de matching</p>
         </div>
         <div class="reveal reveal-delay-1 text-center">
           <p class="text-4xl md:text-5xl font-black text-foreground font-heading tracking-tight">24<span class="text-primary text-3xl">/7</span></p>
-          <p class="mt-2 text-sm text-muted">AI scanning the network</p>
+          <p class="mt-2 text-sm text-muted">IA escanejant la xarxa</p>
         </div>
         <div class="reveal reveal-delay-2 text-center">
           <p class="text-4xl md:text-5xl font-black text-foreground font-heading tracking-tight">0<span class="text-primary text-3xl">€</span></p>
-          <p class="mt-2 text-sm text-muted">Cost for end users (B2B)</p>
+          <p class="mt-2 text-sm text-muted">Cost per a usuaris finals (B2B)</p>
         </div>
         <div class="reveal reveal-delay-3 text-center">
           <p class="text-4xl md:text-5xl font-black text-foreground font-heading tracking-tight">100<span class="text-primary text-3xl">%</span></p>
-          <p class="mt-2 text-sm text-muted">Private &amp; GDPR-compliant</p>
+          <p class="mt-2 text-sm text-muted">Privat i conforme amb el RGPD</p>
         </div>
       </div>
     </div>
@@ -561,19 +533,19 @@
         <div class="reveal max-w-xl">
           <div class="inline-flex items-center gap-2 mb-4 px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full">
             <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-            <span class="text-[11px] font-bold text-amber-300 tracking-widest uppercase">Now in private beta</span>
+            <span class="text-[11px] font-bold text-amber-300 tracking-widest uppercase">Ara en beta privada</span>
           </div>
-          <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">For organizations</p>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white leading-tight">Your lost &amp; found,<br/><span class="text-gradient">reimagined.</span></h2>
+          <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Per a organitzacions</p>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white leading-tight">Els teus objectes perduts,<br/><span class="text-gradient">reimaginats.</span></h2>
           <p class="mt-5 text-slate-400 leading-relaxed">
-            Whether you're managing a city council, an airport terminal, a concert venue, or a university campus — Rekovr replaces your outdated lost &amp; found box with an intelligent platform that automatically connects items with their owners.
+            Tant si gestiones un ajuntament, una terminal d'aeroport, un local de concerts o un campus universitari — Rekovr substitueix la teva caixa d'objectes perduts antiquada per una plataforma intel·ligent que connecta els objectes amb els seus propietaris de manera automàtica.
           </p>
           <p class="mt-4 text-slate-400 leading-relaxed">
-            We're partnering with a small group of pioneer organizations to refine the product together. <span class="text-white font-semibold">It's free during the pilot</span> — and pioneers get exclusive perks when we launch paid plans.
+            Col·laborem amb un petit grup d'organitzacions pioneres per refinar el producte junts. <span class="text-white font-semibold">És gratis durant el pilot</span> — i els pioners obtenen avantatges exclusius quan llancem els plans de pagament.
           </p>
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
-            <a href="#pilot" class="inline-flex items-center justify-center h-11 px-7 text-sm font-semibold text-foreground bg-white rounded-full hover:bg-slate-100 transition">Apply for the pilot</a>
-            <a href="mailto:hello@rekovr.ai" class="inline-flex items-center justify-center h-11 px-7 text-sm font-medium text-slate-300 bg-slate-800 rounded-full hover:bg-slate-700 transition">Talk to us</a>
+            <a href="#pilot" class="inline-flex items-center justify-center h-11 px-7 text-sm font-semibold text-foreground bg-white rounded-full hover:bg-slate-100 transition">Sol·licita el pilot</a>
+            <a href="mailto:hello@rekovr.ai" class="inline-flex items-center justify-center h-11 px-7 text-sm font-medium text-slate-300 bg-slate-800 rounded-full hover:bg-slate-700 transition">Parla amb nosaltres</a>
           </div>
         </div>
         <div class="reveal reveal-delay-1 hidden md:block text-right">
@@ -581,7 +553,6 @@
         </div>
       </div>
 
-      <!-- Feature cards -->
       <div class="grid md:grid-cols-3 gap-4">
         <div class="reveal reveal-delay-1 md:col-span-2 bg-slate-800/40 border border-slate-700/40 rounded-2xl p-8 relative overflow-hidden group hover:border-slate-600/60 transition">
           <div class="absolute top-0 right-0 w-32 h-32 rounded-full -mr-8 -mt-8 group-hover:opacity-100 transition" style="background:rgba(13,148,136,0.08);"></div>
@@ -589,8 +560,8 @@
             <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(13,148,136,0.15); border:1px solid rgba(13,148,136,0.2);">
               <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
             </div>
-            <h4 class="text-xl font-bold text-white mb-2">AI matching &amp; verification, 24/7</h4>
-            <p class="text-slate-400 leading-relaxed">Items are automatically matched with owners across the entire network. AI generates smart questions to verify ownership — no manual review needed. Staff only acts when it matters.</p>
+            <h4 class="text-xl font-bold text-white mb-2">Matching i verificació amb IA, 24/7</h4>
+            <p class="text-slate-400 leading-relaxed">Els objectes s'emparellen automàticament amb els seus propietaris a tota la xarxa. La IA genera preguntes intel·ligents per verificar la propietat — sense revisió manual. El teu equip només actua quan importa.</p>
           </div>
         </div>
         <div class="reveal reveal-delay-2 flex flex-col gap-4">
@@ -598,68 +569,67 @@
             <div class="w-9 h-9 bg-slate-700/50 rounded-lg flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
             </div>
-            <h4 class="font-bold text-white text-sm">Full dashboard</h4>
-            <p class="mt-1 text-xs text-slate-400 leading-relaxed">Manage items, matches, events, and team activity from one place.</p>
+            <h4 class="font-bold text-white text-sm">Tauler complet</h4>
+            <p class="mt-1 text-xs text-slate-400 leading-relaxed">Gestiona objectes, matches, esdeveniments i activitat de l'equip des d'un sol lloc.</p>
           </div>
           <div class="bg-slate-800/40 border border-slate-700/40 rounded-2xl p-6 hover:border-slate-600/60 transition">
             <div class="w-9 h-9 bg-slate-700/50 rounded-lg flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5z"/></svg>
             </div>
-            <h4 class="font-bold text-white text-sm">QR secure pickup</h4>
-            <p class="mt-1 text-xs text-slate-400 leading-relaxed">Single-use QR codes for item handover. No paperwork.</p>
+            <h4 class="font-bold text-white text-sm">Recollida segura per QR</h4>
+            <p class="mt-1 text-xs text-slate-400 leading-relaxed">Codis QR d'un sol ús per al lliurament de l'objecte. Sense paperassa.</p>
           </div>
         </div>
         <div class="reveal reveal-delay-3 bg-slate-800/40 border border-slate-700/40 rounded-2xl p-6 hover:border-slate-600/60 transition">
           <div class="w-9 h-9 bg-slate-700/50 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
           </div>
-          <h4 class="font-bold text-white text-sm">Event management</h4>
-          <p class="mt-1 text-xs text-slate-400 leading-relaxed">Organize items by events — festivals, conferences, seasons.</p>
+          <h4 class="font-bold text-white text-sm">Gestió d'esdeveniments</h4>
+          <p class="mt-1 text-xs text-slate-400 leading-relaxed">Organitza objectes per esdeveniments — festivals, conferències, temporades.</p>
         </div>
         <div class="reveal reveal-delay-4 bg-slate-800/40 border border-slate-700/40 rounded-2xl p-6 hover:border-slate-600/60 transition">
           <div class="w-9 h-9 bg-slate-700/50 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
           </div>
-          <h4 class="font-bold text-white text-sm">Analytics &amp; reporting</h4>
-          <p class="mt-1 text-xs text-slate-400 leading-relaxed">Track recovery rates, response times, and volume trends.</p>
+          <h4 class="font-bold text-white text-sm">Analítiques i informes</h4>
+          <p class="mt-1 text-xs text-slate-400 leading-relaxed">Segueix taxes de recuperació, temps de resposta i tendències de volum.</p>
         </div>
         <div class="reveal reveal-delay-5 bg-slate-800/40 border border-slate-700/40 rounded-2xl p-6 hover:border-slate-600/60 transition">
           <div class="w-9 h-9 bg-slate-700/50 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
           </div>
-          <h4 class="font-bold text-white text-sm">Multi-operator teams</h4>
-          <p class="mt-1 text-xs text-slate-400 leading-relaxed">Role-based access for departments, staff, and locations.</p>
+          <h4 class="font-bold text-white text-sm">Equips multioperador</h4>
+          <p class="mt-1 text-xs text-slate-400 leading-relaxed">Accés per rols per a departaments, personal i ubicacions.</p>
         </div>
       </div>
 
-      <!-- Org types -->
       <div class="reveal mt-16 pt-16 border-t border-slate-800">
-        <h3 class="text-xl font-extrabold text-white text-center mb-4">Built for every type of organization</h3>
-        <p class="text-slate-400 text-center max-w-xl mx-auto mb-10 text-sm">From small venues to entire cities — Rekovr adapts to your scale.</p>
+        <h3 class="text-xl font-extrabold text-white text-center mb-4">Construït per a qualsevol tipus d'organització</h3>
+        <p class="text-slate-400 text-center max-w-xl mx-auto mb-10 text-sm">Des de petits locals fins a ciutats senceres — Rekovr s'adapta a la teva escala.</p>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
           <div class="org-card bg-slate-800/30 border border-slate-700/30 rounded-xl px-5 py-4 flex items-center gap-4">
             <div class="w-8 h-8 flex-shrink-0 flex items-center justify-center bg-slate-700/50 rounded-lg"><svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21"/></svg></div>
-            <div><h4 class="font-semibold text-white text-sm">City councils</h4><p class="text-xs text-slate-400 mt-0.5">Digitize municipal lost &amp; found</p></div>
+            <div><h4 class="font-semibold text-white text-sm">Ajuntaments</h4><p class="text-xs text-slate-400 mt-0.5">Digitalitza els objectes perduts municipals</p></div>
           </div>
           <div class="org-card bg-slate-800/30 border border-slate-700/30 rounded-xl px-5 py-4 flex items-center gap-4">
             <div class="w-8 h-8 flex-shrink-0 flex items-center justify-center bg-slate-700/50 rounded-lg"><svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg></div>
-            <div><h4 class="font-semibold text-white text-sm">Airports &amp; transport</h4><p class="text-xs text-slate-400 mt-0.5">Terminals, bus lines, taxi fleets</p></div>
+            <div><h4 class="font-semibold text-white text-sm">Aeroports i transport</h4><p class="text-xs text-slate-400 mt-0.5">Terminals, línies d'autobús, flotes de taxi</p></div>
           </div>
           <div class="org-card bg-slate-800/30 border border-slate-700/30 rounded-xl px-5 py-4 flex items-center gap-4">
             <div class="w-8 h-8 flex-shrink-0 flex items-center justify-center bg-slate-700/50 rounded-lg"><svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"/></svg></div>
-            <div><h4 class="font-semibold text-white text-sm">Events &amp; festivals</h4><p class="text-xs text-slate-400 mt-0.5">Concerts, fairs, sports, conferences</p></div>
+            <div><h4 class="font-semibold text-white text-sm">Esdeveniments i festivals</h4><p class="text-xs text-slate-400 mt-0.5">Concerts, fires, esports, conferències</p></div>
           </div>
           <div class="org-card bg-slate-800/30 border border-slate-700/30 rounded-xl px-5 py-4 flex items-center gap-4">
             <div class="w-8 h-8 flex-shrink-0 flex items-center justify-center bg-slate-700/50 rounded-lg"><svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342"/></svg></div>
-            <div><h4 class="font-semibold text-white text-sm">Schools &amp; universities</h4><p class="text-xs text-slate-400 mt-0.5">Campuses, facilities, libraries</p></div>
+            <div><h4 class="font-semibold text-white text-sm">Escoles i universitats</h4><p class="text-xs text-slate-400 mt-0.5">Campus, instal·lacions, biblioteques</p></div>
           </div>
           <div class="org-card bg-slate-800/30 border border-slate-700/30 rounded-xl px-5 py-4 flex items-center gap-4">
             <div class="w-8 h-8 flex-shrink-0 flex items-center justify-center bg-slate-700/50 rounded-lg"><svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819"/></svg></div>
-            <div><h4 class="font-semibold text-white text-sm">Hotels &amp; hospitality</h4><p class="text-xs text-slate-400 mt-0.5">Hotels, resorts, restaurants</p></div>
+            <div><h4 class="font-semibold text-white text-sm">Hotels i hostaleria</h4><p class="text-xs text-slate-400 mt-0.5">Hotels, resorts, restaurants</p></div>
           </div>
           <div class="org-card bg-slate-800/30 border border-slate-700/30 rounded-xl px-5 py-4 flex items-center gap-4">
             <div class="w-8 h-8 flex-shrink-0 flex items-center justify-center bg-slate-700/50 rounded-lg"><svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg></div>
-            <div><h4 class="font-semibold text-white text-sm">Retail &amp; shopping</h4><p class="text-xs text-slate-400 mt-0.5">Malls, shops, commercial centers</p></div>
+            <div><h4 class="font-semibold text-white text-sm">Comerç i botigues</h4><p class="text-xs text-slate-400 mt-0.5">Centres comercials, botigues, locals</p></div>
           </div>
         </div>
       </div>
@@ -670,37 +640,37 @@
   <section id="features" class="py-24 md:py-32 bg-surface">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16">
-        <p class="reveal text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Features</p>
-        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-foreground">Built for trust and speed</h2>
+        <p class="reveal text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Funcionalitats</p>
+        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-foreground">Construït per a la confiança i la velocitat</h2>
       </div>
       <div class="grid sm:grid-cols-2 gap-4">
         <div class="reveal feature-card bg-white rounded-2xl border border-slate-100 p-8">
           <div class="w-10 h-10 flex items-center justify-center rounded-xl mb-5" style="background:#F0FDFA; border:1px solid #CCFBF1;">
             <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-foreground mb-2">AI-powered matching</h3>
-          <p class="text-muted leading-relaxed text-sm">Visual and semantic analysis compares descriptions, photos, and context to find your item across the entire network with high precision.</p>
+          <h3 class="text-lg font-bold text-foreground mb-2">Matching impulsat per IA</h3>
+          <p class="text-muted leading-relaxed text-sm">L'anàlisi visual i semàntica compara descripcions, fotos i context per trobar el teu objecte a tota la xarxa amb alta precisió.</p>
         </div>
         <div class="reveal reveal-delay-1 feature-card bg-white rounded-2xl border border-slate-100 p-8">
           <div class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl mb-5">
             <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438a2.25 2.25 0 01-1.228 2.353 9 9 0 01-1.395-1.152M3.888 15.903A9 9 0 0112.75 3.03"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-foreground mb-2">Global network</h3>
-          <p class="text-muted leading-relaxed text-sm">Your lost item is searched across individuals, transport companies, airports, and venues — not just nearby posts. One report reaches everywhere.</p>
+          <h3 class="text-lg font-bold text-foreground mb-2">Xarxa global</h3>
+          <p class="text-muted leading-relaxed text-sm">El teu objecte perdut es busca entre particulars, empreses de transport, aeroports i locals — no només publicacions properes. Un sol reporte arriba a tot arreu.</p>
         </div>
         <div class="reveal reveal-delay-2 feature-card bg-white rounded-2xl border border-slate-100 p-8">
           <div class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl mb-5">
             <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-foreground mb-2">Secure &amp; private</h3>
-          <p class="text-muted leading-relaxed text-sm">Chat only unlocks after a verified match. Your personal information stays protected. Ownership verification built in.</p>
+          <h3 class="text-lg font-bold text-foreground mb-2">Segur i privat</h3>
+          <p class="text-muted leading-relaxed text-sm">El xat només es desbloqueja després d'una coincidència verificada. La teva informació personal queda protegida. Verificació de propietat integrada.</p>
         </div>
         <div class="reveal reveal-delay-3 feature-card bg-white rounded-2xl border border-slate-100 p-8">
           <div class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl mb-5">
             <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-foreground mb-2">Built-in rewards</h3>
-          <p class="text-muted leading-relaxed text-sm">Set a reward for your lost item. Finders — whether individuals or organizations — get compensated for doing the right thing.</p>
+          <h3 class="text-lg font-bold text-foreground mb-2">Recompenses integrades</h3>
+          <p class="text-muted leading-relaxed text-sm">Estableix una recompensa per al teu objecte perdut. Qui el trobi — sigui un particular o una organització — rep una compensació per fer el que cal.</p>
         </div>
       </div>
     </div>
@@ -712,28 +682,27 @@
       <div class="text-center mb-12">
         <div class="reveal inline-flex items-center gap-2 mb-5 px-4 py-1.5 bg-amber-50 border border-amber-200/60 rounded-full">
           <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
-          <span class="text-xs font-semibold text-amber-700 tracking-wide uppercase">Pilot Program — Limited spots</span>
+          <span class="text-xs font-semibold text-amber-700 tracking-wide uppercase">Programa pilot — Places limitades</span>
         </div>
-        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-foreground">We're looking for<br/><span class="text-gradient">5 pioneer organizations</span></h2>
+        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-foreground">Busquem<br/><span class="text-gradient">5 organitzacions pioneres</span></h2>
         <p class="reveal reveal-delay-2 mt-5 text-muted max-w-2xl mx-auto leading-relaxed">
-          Rekovr is launching in private beta. We're partnering with a handful of organizations to refine the platform with real-world data. <span class="text-foreground font-semibold">It's free during the pilot</span> — and pioneers get exclusive perks when we launch paid plans.
+          Rekovr es llança en beta privada. Col·laborem amb un grapat d'organitzacions per refinar la plataforma amb dades del món real. <span class="text-foreground font-semibold">És gratis durant el pilot</span> — i els pioners obtenen avantatges exclusius quan llancem els plans de pagament.
         </p>
       </div>
 
-      <!-- Two columns: what you get + what we ask -->
       <div class="reveal reveal-delay-2 grid md:grid-cols-2 gap-4 mb-4">
         <div class="bg-white rounded-2xl border border-slate-200 p-8 flex flex-col">
           <div class="flex items-center gap-3 mb-5">
             <div class="w-10 h-10 flex items-center justify-center rounded-xl" style="background:#F0FDFA; border:1px solid #CCFBF1;">
               <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
             </div>
-            <h3 class="text-xl font-bold text-foreground">What you get</h3>
+            <h3 class="text-xl font-bold text-foreground">Què obtens</h3>
           </div>
           <ul class="space-y-3 flex-1">
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span><strong class="text-foreground">Free access during the pilot</strong> — full platform, no commitment</span></li>
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>AI matching, ownership verification, QR pickup — everything we offer</span></li>
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Dedicated onboarding and a direct line to the product team</span></li>
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Real influence on the roadmap — your feedback shapes the product</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span><strong class="text-foreground">Accés gratuït durant el pilot</strong> — plataforma completa, sense compromís</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Matching amb IA, verificació de propietat, recollida per QR — tot el que oferim</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Onboarding dedicat i línia directa amb l'equip de producte</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Influència real sobre el roadmap — el teu feedback dona forma al producte</span></li>
           </ul>
         </div>
 
@@ -742,50 +711,48 @@
             <div class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl">
               <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342"/></svg>
             </div>
-            <h3 class="text-xl font-bold text-foreground">What we ask in return</h3>
+            <h3 class="text-xl font-bold text-foreground">Què demanem a canvi</h3>
           </div>
           <ul class="space-y-3 flex-1">
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Use Rekovr as your day-to-day lost &amp; found tool</span></li>
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Honest, regular feedback — what works, what doesn't, what's missing</span></li>
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Permission to share results as a case study (we'll always agree on what's public)</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Usar Rekovr com a eina diària d'objectes perduts</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Feedback honest i regular — què funciona, què no, què falta</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Permís per compartir resultats com a cas d'èxit (sempre acordant què és públic)</span></li>
           </ul>
         </div>
       </div>
 
-      <!-- Pioneer benefits / future incentives -->
       <div class="reveal reveal-delay-1 mt-8 bg-foreground rounded-2xl p-8 md:p-10 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-[400px] h-[400px] rounded-full opacity-[0.07]" style="background: radial-gradient(circle, #0D9488, transparent 70%);"></div>
         <div class="relative z-10">
           <div class="flex items-center gap-2 mb-3">
             <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Pioneer benefits</p>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Avantatges per a pioners</p>
           </div>
-          <h3 class="text-xl md:text-2xl font-extrabold text-white mb-3">Pilot orgs get exclusive perks when we launch paid plans</h3>
-          <p class="text-slate-400 text-sm leading-relaxed max-w-2xl mb-6">We don't yet sell subscriptions — but the organizations who help us shape the product won't pay the standard price when we do.</p>
+          <h3 class="text-xl md:text-2xl font-extrabold text-white mb-3">Les organitzacions del pilot obtenen avantatges exclusius quan llancem els plans de pagament</h3>
+          <p class="text-slate-400 text-sm leading-relaxed max-w-2xl mb-6">Encara no venem subscripcions — però les organitzacions que ens ajudin a donar forma al producte no pagaran el preu estàndard quan ho fem.</p>
           <div class="grid sm:grid-cols-3 gap-4">
             <div class="bg-slate-800/40 border border-slate-700/40 rounded-xl p-5">
-              <p class="text-sm font-bold text-white mb-1">Founding pricing</p>
-              <p class="text-xs text-slate-400 leading-relaxed">A preferential rate locked in for life on the plan that fits you best.</p>
+              <p class="text-sm font-bold text-white mb-1">Preu fundador</p>
+              <p class="text-xs text-slate-400 leading-relaxed">Una tarifa preferent de per vida en el pla que millor t'encaixi.</p>
             </div>
             <div class="bg-slate-800/40 border border-slate-700/40 rounded-xl p-5">
-              <p class="text-sm font-bold text-white mb-1">Founding partner status</p>
-              <p class="text-xs text-slate-400 leading-relaxed">Listed as a launch partner. Direct input on the public roadmap.</p>
+              <p class="text-sm font-bold text-white mb-1">Estatus de partner fundador</p>
+              <p class="text-xs text-slate-400 leading-relaxed">Llistat com a partner de llançament. Aportació directa al roadmap públic.</p>
             </div>
             <div class="bg-slate-800/40 border border-slate-700/40 rounded-xl p-5">
-              <p class="text-sm font-bold text-white mb-1">Early access</p>
-              <p class="text-xs text-slate-400 leading-relaxed">First to receive new features. Priority support, always.</p>
+              <p class="text-sm font-bold text-white mb-1">Accés anticipat</p>
+              <p class="text-xs text-slate-400 leading-relaxed">Primers a rebre noves funcionalitats. Suport prioritari, sempre.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- CTA -->
       <div class="reveal reveal-delay-2 mt-12 text-center">
-        <a href="mailto:hello@rekovr.ai?subject=Pilot%20Program%20Application&body=Hi%20Rekovr%20team%2C%0A%0AI%27d%20like%20to%20apply%20for%20the%20Pilot%20Program.%20Here%27s%20some%20info%20about%20us%3A%0A%0A%E2%80%94%20Organization%20name%3A%20%0A%E2%80%94%20Organization%20type%20%28airport%20%2F%20council%20%2F%20venue%20%2F%20transport%20%2F%20hotel%20%2F%20university%20%2F%20retail%20%2F%20other%29%3A%20%0A%E2%80%94%20Your%20name%20%26%20role%3A%20%0A%E2%80%94%20Country%20%2F%20city%3A%20%0A%E2%80%94%20Estimated%20lost%20items%20per%20month%20%28%3C10%20%2F%2010-50%20%2F%2050-200%20%2F%20200-1000%20%2F%201000%2B%29%3A%20%0A%E2%80%94%20How%20you%20handle%20lost%20%26%20found%20today%3A%20%0A%E2%80%94%20Why%20you%27re%20interested%20in%20Rekovr%3A%20%0A%0AThanks%21" class="group inline-flex items-center justify-center h-13 px-8 text-base font-semibold text-white bg-foreground rounded-full hover:bg-slate-800 transition shadow-lg shadow-foreground/15">
-          Apply for the pilot
+        <a href="mailto:hello@rekovr.ai?subject=Sol%C2%B7licitud%20al%20Programa%20Pilot&body=Hola%20equip%20de%20Rekovr%2C%0A%0AM%27agradaria%20sol%C2%B7licitar%20el%20Programa%20Pilot.%20Algunes%20dades%20sobre%20nosaltres%3A%0A%0A%E2%80%94%20Nom%20de%20l%27organitzaci%C3%B3%3A%20%0A%E2%80%94%20Tipus%20d%27organitzaci%C3%B3%20%28aeroport%20%2F%20ajuntament%20%2F%20local%20%2F%20transport%20%2F%20hotel%20%2F%20universitat%20%2F%20retail%20%2F%20altres%29%3A%20%0A%E2%80%94%20El%20teu%20nom%20i%20c%C3%A0rrec%3A%20%0A%E2%80%94%20Pa%C3%ADs%20%2F%20ciutat%3A%20%0A%E2%80%94%20Estimaci%C3%B3%20d%27objectes%20perduts%20al%20mes%20%28%3C10%20%2F%2010-50%20%2F%2050-200%20%2F%20200-1000%20%2F%201000%2B%29%3A%20%0A%E2%80%94%20Com%20gestioneu%20els%20objectes%20perduts%20avui%3A%20%0A%E2%80%94%20Per%20qu%C3%A8%20us%20interessa%20Rekovr%3A%20%0A%0AGr%C3%A0cies%21" class="group inline-flex items-center justify-center h-13 px-8 text-base font-semibold text-white bg-foreground rounded-full hover:bg-slate-800 transition shadow-lg shadow-foreground/15">
+          Sol·licita el pilot
           <svg class="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         </a>
-        <p class="text-xs text-muted mt-4">Opens your email client with a quick template. Or write directly to <a href="mailto:hello@rekovr.ai" class="underline hover:text-foreground transition">hello@rekovr.ai</a>.</p>
+        <p class="text-xs text-muted mt-4">Obre el teu client de correu amb una plantilla ràpida. O escriu-nos directament a <a href="mailto:hello@rekovr.ai" class="underline hover:text-foreground transition">hello@rekovr.ai</a>.</p>
       </div>
     </div>
   </section>
@@ -796,17 +763,17 @@
     <div class="absolute inset-0 pointer-events-none opacity-[0.04]" style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 28px 28px;"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full opacity-[0.12]" style="background: radial-gradient(ellipse, #0D9488, transparent 70%);"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
-      <p class="reveal text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Get started today</p>
-      <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white leading-tight">Ready to recover<br/><span class="text-gradient">what matters?</span></h2>
-      <p class="reveal reveal-delay-2 mt-5 text-lg text-slate-400 leading-relaxed">Whether you're an individual who lost something, someone who found an item, or an organization looking to modernize your lost &amp; found.</p>
+      <p class="reveal text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Comença avui</p>
+      <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white leading-tight">Preparat per recuperar<br/><span class="text-gradient">el que importa?</span></h2>
+      <p class="reveal reveal-delay-2 mt-5 text-lg text-slate-400 leading-relaxed">Tant si has perdut alguna cosa, com si has trobat un objecte, com si ets una organització que vol modernitzar els seus objectes perduts.</p>
       <div class="reveal reveal-delay-3 mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
         <a href="https://app.rekovr.ai" class="group inline-flex items-center justify-center h-12 px-8 text-base font-semibold text-foreground bg-white rounded-full hover:bg-slate-100 transition shadow-lg">
-          I lost something
+          He perdut alguna cosa
           <svg class="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         </a>
-        <a href="https://app.rekovr.ai" class="inline-flex items-center justify-center h-12 px-8 text-base font-semibold text-white border border-slate-700 rounded-full hover:bg-slate-800 hover:border-slate-600 transition">I found something</a>
+        <a href="https://app.rekovr.ai" class="inline-flex items-center justify-center h-12 px-8 text-base font-semibold text-white border border-slate-700 rounded-full hover:bg-slate-800 hover:border-slate-600 transition">He trobat alguna cosa</a>
         <a href="#pilot" class="inline-flex items-center justify-center h-12 px-8 text-base font-medium text-slate-500 hover:text-slate-300 transition">
-          Pilot program
+          Programa pilot
           <svg class="ml-1.5 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
         </a>
       </div>
@@ -821,37 +788,37 @@
           <a href="./index.html" class="flex items-center gap-2 mb-4">
             <span class="text-xl font-extrabold tracking-tight text-foreground font-heading">re<span class="k-bicolor"><span class="k-left">k</span><span class="k-right">k</span></span>ovr<span style="color:#14B8A6">.</span></span>
           </a>
-          <p class="text-sm text-muted leading-relaxed max-w-[200px]">The global lost &amp; found platform powered by AI.</p>
+          <p class="text-sm text-muted leading-relaxed max-w-[200px]">La plataforma global d'objectes perduts impulsada per IA.</p>
           <a href="mailto:hello@rekovr.ai" class="inline-flex items-center gap-1.5 mt-4 text-sm text-slate-400 hover:text-foreground transition">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
             hello@rekovr.ai
           </a>
         </div>
         <div>
-          <p class="text-xs font-bold text-foreground uppercase tracking-widest mb-4">Platform</p>
+          <p class="text-xs font-bold text-foreground uppercase tracking-widest mb-4">Plataforma</p>
           <ul class="space-y-3">
-            <li><a href="https://app.rekovr.ai" class="text-sm text-muted hover:text-foreground transition">Lost something</a></li>
-            <li><a href="https://app.rekovr.ai" class="text-sm text-muted hover:text-foreground transition">Found something</a></li>
-            <li><a href="#business" class="text-sm text-muted hover:text-foreground transition">For organizations</a></li>
-            <li><a href="#pilot" class="text-sm text-muted hover:text-foreground transition">Pilot program</a></li>
+            <li><a href="https://app.rekovr.ai" class="text-sm text-muted hover:text-foreground transition">He perdut alguna cosa</a></li>
+            <li><a href="https://app.rekovr.ai" class="text-sm text-muted hover:text-foreground transition">He trobat alguna cosa</a></li>
+            <li><a href="#business" class="text-sm text-muted hover:text-foreground transition">Per a organitzacions</a></li>
+            <li><a href="#pilot" class="text-sm text-muted hover:text-foreground transition">Programa pilot</a></li>
           </ul>
         </div>
         <div>
-          <p class="text-xs font-bold text-foreground uppercase tracking-widest mb-4">Company</p>
+          <p class="text-xs font-bold text-foreground uppercase tracking-widest mb-4">Empresa</p>
           <ul class="space-y-3">
-            <li><a href="about/index.html" class="text-sm text-muted hover:text-foreground transition">About</a></li>
-            <li><a href="contact/index.html" class="text-sm text-muted hover:text-foreground transition">Contact</a></li>
+            <li><a href="about/index.html" class="text-sm text-muted hover:text-foreground transition">Sobre nosaltres</a></li>
+            <li><a href="contact/index.html" class="text-sm text-muted hover:text-foreground transition">Contacte</a></li>
           </ul>
         </div>
         <div>
           <p class="text-xs font-bold text-foreground uppercase tracking-widest mb-4">Legal</p>
           <ul class="space-y-3">
-            <li><a href="legal-notice/index.html" class="text-sm text-muted hover:text-foreground transition">Legal Notice</a></li>
-            <li><a href="terms/index.html" class="text-sm text-muted hover:text-foreground transition">Terms of Use</a></li>
-            <li><a href="privacy/index.html" class="text-sm text-muted hover:text-foreground transition">Privacy Policy</a></li>
-            <li><a href="cookies/index.html" class="text-sm text-muted hover:text-foreground transition">Cookie Policy</a></li>
-            <li><a href="community-guidelines/index.html" class="text-sm text-muted hover:text-foreground transition">Community Guidelines</a></li>
-            <li><a href="illegal-content-report/index.html" class="text-sm text-muted hover:text-foreground transition">Report Illegal Content</a></li>
+            <li><a href="../legal-notice/index.html" class="text-sm text-muted hover:text-foreground transition">Avís legal</a></li>
+            <li><a href="../terms/index.html" class="text-sm text-muted hover:text-foreground transition">Termes d'ús</a></li>
+            <li><a href="../privacy/index.html" class="text-sm text-muted hover:text-foreground transition">Política de privacitat</a></li>
+            <li><a href="../cookies/index.html" class="text-sm text-muted hover:text-foreground transition">Política de cookies</a></li>
+            <li><a href="../community-guidelines/index.html" class="text-sm text-muted hover:text-foreground transition">Normes de la comunitat</a></li>
+            <li><a href="../illegal-content-report/index.html" class="text-sm text-muted hover:text-foreground transition">Reportar contingut il·legal</a></li>
           </ul>
         </div>
       </div>
@@ -860,30 +827,30 @@
           <p class="text-xs text-slate-400">&copy; 2026 Rekovr.ai</p>
           <span class="hidden sm:inline text-slate-200">·</span>
           <p class="text-xs text-slate-400">
-            <a href="legal-notice/index.html" class="hover:text-foreground transition">Legal Notice</a>
+            <a href="../legal-notice/index.html" class="hover:text-foreground transition">Avís legal</a>
             <span class="text-slate-200 mx-1.5">|</span>
-            <a href="terms/index.html" class="hover:text-foreground transition">Terms</a>
+            <a href="../terms/index.html" class="hover:text-foreground transition">Termes</a>
             <span class="text-slate-200 mx-1.5">|</span>
-            <a href="privacy/index.html" class="hover:text-foreground transition">Privacy</a>
+            <a href="../privacy/index.html" class="hover:text-foreground transition">Privacitat</a>
             <span class="text-slate-200 mx-1.5">|</span>
-            <a href="cookies/index.html" class="hover:text-foreground transition">Cookies</a>
+            <a href="../cookies/index.html" class="hover:text-foreground transition">Cookies</a>
             <span class="text-slate-200 mx-1.5">|</span>
-            <a href="contact/index.html" class="hover:text-foreground transition">Contact</a>
+            <a href="contact/index.html" class="hover:text-foreground transition">Contacte</a>
           </p>
         </div>
         <div class="flex items-center gap-4">
           <div class="flex items-center gap-2 text-xs">
             <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.6 9h16.8M3.6 15h16.8M12 3a13.5 13.5 0 010 18M12 3a13.5 13.5 0 000 18"/></svg>
-            <span class="text-foreground font-medium">English</span>
+            <a href="../index.html" class="text-slate-400 hover:text-foreground transition">English</a>
             <span class="text-slate-300">·</span>
-            <a href="es/index.html" class="text-slate-400 hover:text-foreground transition">Español</a>
+            <a href="../es/index.html" class="text-slate-400 hover:text-foreground transition">Español</a>
             <span class="text-slate-300">·</span>
-            <a href="ca/index.html" class="text-slate-400 hover:text-foreground transition">Català</a>
+            <span class="text-foreground font-medium">Català</span>
           </div>
           <span class="hidden sm:inline text-slate-200">·</span>
           <div class="flex items-center gap-2">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            <span class="text-xs text-slate-400">All systems operational</span>
+            <span class="text-xs text-slate-400">Tots els sistemes operatius</span>
           </div>
         </div>
       </div>
@@ -891,7 +858,6 @@
   </footer>
 
   <script>
-    // Scroll reveal
     const revealObserver = new IntersectionObserver(
       (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } }),
       { threshold: 0.12 }
@@ -902,23 +868,19 @@
       else revealObserver.observe(el);
     });
 
-    // Nav shadow on scroll
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => { nav.classList.toggle('nav-scrolled', window.scrollY > 10); }, { passive: true });
 
-    // Ticker
     const template = document.getElementById('ticker-items');
     const content = document.getElementById('ticker-content');
     if (template && content) { content.innerHTML = template.innerHTML + template.innerHTML; }
 
-    // Language switcher
     document.querySelectorAll('[data-lang-switcher]').forEach(switcher => {
       const btn = switcher.querySelector('button');
       const menu = switcher.querySelector('[data-lang-menu]');
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const willOpen = menu.classList.contains('hidden');
-        // Close any other open menus first
         document.querySelectorAll('[data-lang-menu]').forEach(m => m.classList.add('hidden'));
         document.querySelectorAll('[data-lang-switcher] button').forEach(b => b.setAttribute('aria-expanded', 'false'));
         if (willOpen) { menu.classList.remove('hidden'); btn.setAttribute('aria-expanded', 'true'); }

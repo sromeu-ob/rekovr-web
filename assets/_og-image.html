@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OG Image</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 1200px; height: 630px; overflow: hidden; }
+    body {
+      position: relative;
+      background: #0F1117;
+      font-family: 'DM Sans', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px;
+    }
+    /* Dot grid */
+    .dots {
+      position: absolute; inset: 0;
+      opacity: 0.06;
+      background-image: radial-gradient(circle, #fff 1.2px, transparent 1.2px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    /* Teal glow top-right */
+    .glow-1 {
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      opacity: 0.22;
+      background: radial-gradient(circle, #0D9488 0%, transparent 65%);
+      pointer-events: none;
+    }
+    /* Cyan glow bottom-left */
+    .glow-2 {
+      position: absolute;
+      bottom: -180px; left: -180px;
+      width: 520px; height: 520px;
+      border-radius: 50%;
+      opacity: 0.14;
+      background: radial-gradient(circle, #0891B2 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .wordmark {
+      position: relative;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 56px;
+      display: inline-flex;
+      align-items: baseline;
+    }
+    .k-bicolor { position: relative; display: inline-block; }
+    .k-bicolor .k-left { display: inline-block; color: #fff; clip-path: inset(0 61% 0 0); }
+    .k-bicolor .k-right { position: absolute; left: 0; top: 0; display: inline-block; color: #14B8A6; clip-path: inset(0 0 0 42%); }
+    .dot { color: #14B8A6; }
+
+    .badge {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(13, 148, 136, 0.12);
+      border: 1px solid rgba(13, 148, 136, 0.35);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #5EEAD4;
+      margin-bottom: 32px;
+      width: fit-content;
+    }
+    .badge .ping {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #14B8A6;
+      box-shadow: 0 0 12px #14B8A6;
+    }
+
+    h1 {
+      position: relative;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 900;
+      font-size: 116px;
+      line-height: 0.95;
+      letter-spacing: -0.045em;
+      color: #fff;
+    }
+    .gradient {
+      background: linear-gradient(135deg, #14B8A6 0%, #22D3EE 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      position: relative;
+      margin-top: 32px;
+      font-size: 26px;
+      color: #94A3B8;
+      font-weight: 400;
+      max-width: 900px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="dots"></div>
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+
+  <div class="wordmark">re<span class="k-bicolor"><span class="k-left">k</span><span class="k-right">k</span></span>ovr<span class="dot">.</span></div>
+
+  <div class="badge">
+    <span class="ping"></span>
+    <span>The lost &amp; found platform</span>
+  </div>
+
+  <h1>Recover<br/><span class="gradient">what matters.</span></h1>
+
+  <p class="tagline">The global AI-powered network that reunites lost items with their owners.</p>
+</body>
+</html>

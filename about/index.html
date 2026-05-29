@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Rekovr</title>
+  <meta name="description" content="About Rekovr — the global AI-powered lost & found platform. Our mission, story, and what we're building." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://rekovr.ai/about/" />
+  <link rel="alternate" hreflang="en" href="https://rekovr.ai/about/" />
+  <link rel="alternate" hreflang="es" href="https://rekovr.ai/es/about/" />
+  <link rel="alternate" hreflang="ca" href="https://rekovr.ai/ca/about/" />
+  <link rel="alternate" hreflang="x-default" href="https://rekovr.ai/about/" />
+  <meta property="og:title" content="About — Rekovr" />
+  <meta property="og:description" content="The global AI-powered lost & found platform. Our mission, story, and what we're building." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rekovr.ai/about/" />
+  <meta property="og:image" content="https://rekovr.ai/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='5' y='3' width='5' height='26' rx='1' fill='%230F1117'/><line x1='10' y1='16' x2='24' y2='5' stroke='%230D9488' stroke-width='3.5' stroke-linecap='round'/><line x1='10' y1='16' x2='24' y2='27' stroke='%230D9488' stroke-width='3.5' stroke-linecap='round'/></svg>" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0D9488',
+            'primary-dark': '#0F766E',
+            'primary-light': '#14B8A6',
+            foreground: '#0F1117',
+            muted: '#64748B',
+            surface: '#F8FAFC',
+            'surface-2': '#EFF6FF',
+          },
+          fontFamily: {
+            heading: ['Manrope', 'sans-serif'],
+            body: ['DM Sans', '-apple-system', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', -apple-system, sans-serif; color: #0F1117; background: #fff; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', sans-serif; }
+    .k-bicolor { position: relative; display: inline-block; }
+    .k-bicolor .k-left  { display: inline-block; color: inherit; clip-path: inset(0 61% 0 0); }
+    .k-bicolor .k-right { position: absolute; left: 0; top: 0; display: inline-block; color: #0D9488; clip-path: inset(0 0 0 42%); }
+    .text-gradient {
+      background: linear-gradient(135deg, #0D9488 0%, #0891B2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .prose-content h2 { font-size: 1.5rem; font-weight: 800; margin-top: 2.75rem; margin-bottom: 1rem; letter-spacing: -0.02em; color: #0F1117; }
+    .prose-content p { margin-bottom: 1rem; line-height: 1.75; color: #334155; }
+    .prose-content ul { margin-bottom: 1rem; padding-left: 0; }
+    .prose-content ul li { line-height: 1.75; color: #334155; }
+    .prose-content a { color: #0D9488; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-content a:hover { color: #0F766E; }
+    .prose-content strong { color: #0F1117; font-weight: 600; }
+  </style>
+</head>
+<body class="bg-white antialiased">
+
+  <!-- ========= NAV ========= -->
+  <nav class="fixed top-0 inset-x-0 z-50">
+    <div class="bg-white/85 backdrop-blur-xl border-b border-slate-100">
+      <div class="max-w-6xl mx-auto flex items-center justify-between px-6 h-16">
+        <a href="../index.html" class="flex items-center gap-2 group">
+          <span class="text-xl font-extrabold tracking-tight text-foreground font-heading">re<span class="k-bicolor"><span class="k-left">k</span><span class="k-right">k</span></span>ovr<span style="color:#14B8A6">.</span></span>
+        </a>
+        <div class="flex items-center gap-2">
+          <!-- Language switcher -->
+          <div class="relative" data-lang-switcher>
+            <button type="button" class="inline-flex items-center gap-1.5 h-9 px-2.5 text-sm text-slate-500 hover:text-foreground hover:bg-slate-50 rounded-lg transition" aria-haspopup="menu" aria-expanded="false" aria-label="Change language">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.6 9h16.8M3.6 15h16.8M12 3a13.5 13.5 0 010 18M12 3a13.5 13.5 0 000 18"/></svg>
+              <span class="font-medium">EN</span>
+              <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="hidden absolute right-0 top-full mt-1 w-44 bg-white border border-slate-200 rounded-xl shadow-lg shadow-slate-900/[0.06] py-1 z-50" role="menu" data-lang-menu>
+              <a href="./index.html" class="flex items-center justify-between px-3 py-2 mx-1 text-sm font-medium text-foreground bg-slate-50 rounded-md" role="menuitem" aria-current="true"><span>English</span><span class="text-[10px] text-slate-400 font-mono tracking-wider">EN</span></a>
+              <a href="../es/about/index.html" class="flex items-center justify-between px-3 py-2 mx-1 text-sm text-slate-600 hover:bg-slate-50 rounded-md transition" role="menuitem"><span>Español</span><span class="text-[10px] text-slate-400 font-mono tracking-wider">ES</span></a>
+              <a href="../ca/about/index.html" class="flex items-center justify-between px-3 py-2 mx-1 text-sm text-slate-600 hover:bg-slate-50 rounded-md transition" role="menuitem"><span>Català</span><span class="text-[10px] text-slate-400 font-mono tracking-wider">CA</span></a>
+            </div>
+          </div>
+          <a href="../index.html" class="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-foreground transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+            Back to home
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========= CONTENT ========= -->
+  <main class="max-w-3xl mx-auto px-6 pt-32 pb-24">
+    <p class="text-xs font-semibold text-primary uppercase tracking-widest mb-4">About Rekovr</p>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-[-0.035em] leading-[1.02] text-foreground mb-8">
+      We're building the global<br/><span class="text-gradient">lost &amp; found network.</span>
+    </h1>
+    <p class="text-lg text-slate-500 leading-relaxed mb-16">
+      Every day, millions of items get lost — at airports, on taxis, in concerts, on the street. Most of them never make it back to their owners, not because no one found them, but because there's no system connecting the dots. We're fixing that.
+    </p>
+
+    <div class="prose-content">
+      <h2>Our mission</h2>
+      <p>
+        Reunite lost items with their owners — wherever they are, whoever found them. We believe the friction between losing something and recovering it should be near zero, and that doing the right thing (returning what isn't yours) should be effortless and rewarded.
+      </p>
+
+      <h2>What we're building</h2>
+      <p>
+        Rekovr is a single platform where individuals and organizations — airports, transport fleets, city councils, venues, hotels, universities — report what they've lost or found. Our AI matches them across the entire network using visual, semantic, and contextual signals, then verifies ownership before connecting the two parties.
+      </p>
+      <p>
+        No more siloed lost &amp; found boxes. No more "we'll call you back". No more lost wallets ending up in landfill because the airport couldn't reach the owner.
+      </p>
+
+      <h2>Why now</h2>
+      <p>
+        Two things changed in the last few years: image and language AI got good enough to compare a fuzzy "I lost a black leather wallet near gate B12" against a photo taken by a cleaner three hours later — and the cost of that comparison dropped to almost nothing. The technology is finally there to do at planetary scale what was previously a human, manual, and frankly hopeless job.
+      </p>
+
+      <h2>Who we are</h2>
+      <p>
+        Rekovr is built by a small, focused team based in Barcelona. We come from engineering, product, and operations backgrounds, and we've spent years building software at the intersection of consumer apps and B2B platforms. We're keeping the team deliberately small while we partner with our first pilot organizations.
+      </p>
+      <p>
+        Want to know more about who's behind this, or chat about a pilot? <a href="mailto:hello@rekovr.ai">hello@rekovr.ai</a> reaches us directly.
+      </p>
+
+      <h2>Where we're going</h2>
+      <p>
+        Right now we're in private beta with a handful of pioneer organizations. Our short-term focus: prove that the network model works in the wild, refine AI matching and ownership verification with real data, and lock in the workflows that big operators (airports, councils, fleets) actually need.
+      </p>
+      <p>
+        Longer term: physical-digital products that bridge the gap between a tagged item and its digital identity on Rekovr, and partnerships that turn the platform into the default infrastructure for lost &amp; found — public and private.
+      </p>
+
+      <p class="text-sm text-muted mt-12 pt-8 border-t border-slate-100">
+        Want to follow our progress or join the pilot? See the <a href="../#pilot">Pilot Program</a> or write to <a href="mailto:hello@rekovr.ai">hello@rekovr.ai</a>.
+      </p>
+    </div>
+  </main>
+
+  <!-- ========= FOOTER ========= -->
+  <footer class="border-t border-slate-100 bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-14">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+        <div class="col-span-2 md:col-span-1">
+          <a href="../index.html" class="flex items-center gap-2 mb-4">
+            <span class="text-xl font-extrabold tracking-tight text-foreground font-heading">re<span class="k-bicolor"><span class="k-left">k</span><span class="k-right">k</span></span>ovr<span style="color:#14B8A6">.</span></span>
+          </a>
+          <p class="text-sm text-muted leading-relaxed max-w-[200px]">The global lost &amp; found platform powered by AI.</p>
+          <a href="mailto:hello@rekovr.ai" class="inline-flex items-center gap-1.5 mt-4 text-sm text-slate-400 hover:text-foreground transition">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            hello@rekovr.ai
+          </a>
+        </div>
+        <div>
+          <p class="text-xs font-bold text-foreground uppercase tracking-widest mb-4">Platform</p>
+          <ul class="space-y-3">
+            <li><a href="https://app.rekovr.ai" class="text-sm text-muted hover:text-foreground transition">Lost something</a></li>
+            <li><a href="https://app.rekovr.ai" class="text-sm text-muted hover:text-foreground transition">Found something</a></li>
+            <li><a href="../#business" class="text-sm text-muted hover:text-foreground transition">For organizations</a></li>
+            <li><a href="../#pilot" class="text-sm text-muted hover:text-foreground transition">Pilot program</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-bold text-foreground uppercase tracking-widest mb-4">Company</p>
+          <ul class="space-y-3">
+            <li><a href="../about/index.html" class="text-sm text-muted hover:text-foreground transition">About</a></li>
+            <li><a href="../contact/index.html" class="text-sm text-muted hover:text-foreground transition">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-bold text-foreground uppercase tracking-widest mb-4">Legal</p>
+          <ul class="space-y-3">
+            <li><a href="../legal-notice/index.html" class="text-sm text-muted hover:text-foreground transition">Legal Notice</a></li>
+            <li><a href="../terms/index.html" class="text-sm text-muted hover:text-foreground transition">Terms of Use</a></li>
+            <li><a href="../privacy/index.html" class="text-sm text-muted hover:text-foreground transition">Privacy Policy</a></li>
+            <li><a href="../cookies/index.html" class="text-sm text-muted hover:text-foreground transition">Cookie Policy</a></li>
+            <li><a href="../community-guidelines/index.html" class="text-sm text-muted hover:text-foreground transition">Community Guidelines</a></li>
+            <li><a href="../illegal-content-report/index.html" class="text-sm text-muted hover:text-foreground transition">Report Illegal Content</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-slate-100">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+          <p class="text-xs text-slate-400">&copy; 2026 Rekovr.ai</p>
+          <span class="hidden sm:inline text-slate-200">·</span>
+          <p class="text-xs text-slate-400">
+            <a href="../legal-notice/index.html" class="hover:text-foreground transition">Legal Notice</a>
+            <span class="text-slate-200 mx-1.5">|</span>
+            <a href="../terms/index.html" class="hover:text-foreground transition">Terms</a>
+            <span class="text-slate-200 mx-1.5">|</span>
+            <a href="../privacy/index.html" class="hover:text-foreground transition">Privacy</a>
+            <span class="text-slate-200 mx-1.5">|</span>
+            <a href="../cookies/index.html" class="hover:text-foreground transition">Cookies</a>
+            <span class="text-slate-200 mx-1.5">|</span>
+            <a href="../contact/index.html" class="hover:text-foreground transition">Contact</a>
+          </p>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2 text-xs">
+            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.6 9h16.8M3.6 15h16.8M12 3a13.5 13.5 0 010 18M12 3a13.5 13.5 0 000 18"/></svg>
+            <span class="text-foreground font-medium">English</span>
+            <span class="text-slate-300">·</span>
+            <a href="../es/about/index.html" class="text-slate-400 hover:text-foreground transition">Español</a>
+            <span class="text-slate-300">·</span>
+            <a href="../ca/about/index.html" class="text-slate-400 hover:text-foreground transition">Català</a>
+          </div>
+          <span class="hidden sm:inline text-slate-200">·</span>
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            <span class="text-xs text-slate-400">All systems operational</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('[data-lang-switcher]').forEach(switcher => {
+      const btn = switcher.querySelector('button');
+      const menu = switcher.querySelector('[data-lang-menu]');
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const willOpen = menu.classList.contains('hidden');
+        document.querySelectorAll('[data-lang-menu]').forEach(m => m.classList.add('hidden'));
+        document.querySelectorAll('[data-lang-switcher] button').forEach(b => b.setAttribute('aria-expanded', 'false'));
+        if (willOpen) { menu.classList.remove('hidden'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+    document.addEventListener('click', () => {
+      document.querySelectorAll('[data-lang-menu]').forEach(m => m.classList.add('hidden'));
+      document.querySelectorAll('[data-lang-switcher] button').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('[data-lang-menu]').forEach(m => m.classList.add('hidden'));
+        document.querySelectorAll('[data-lang-switcher] button').forEach(b => b.setAttribute('aria-expanded', 'false'));
+      }
+    });
+  </script>
+
+</body>
+</html>
